@@ -26,8 +26,8 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preload" href="/assets/fonts/source-serif-4-600.woff" as="font" type="font/woff" crossorigin>
-  <link rel="stylesheet" href="/assets/styles.css?v=26">
-  <script src="/assets/main.js?v=19" defer></script>
+  <link rel="stylesheet" href="/assets/styles.css?v=27">
+  <script src="/assets/main.js?v=20" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -98,12 +98,13 @@
     </dl>
 
     <h3 class="subtitle" id="approach">How I troubleshoot</h3>
-    <ol class="steps">
-      <li><b>Find who’s blocked.</b> Restore service first. Know who is affected and how badly.</li>
-      <li><b>Check the whole chain.</b> Account, permissions, device, network/DNS, application, data.</li>
-      <li><b>Reproduce it.</b> Exact error, time, recent changes. Test one cause at a time.</li>
-      <li><b>Fix it safely.</b> Apply the fix within policy, with a rollback ready.</li>
-      <li><b>Close it out.</b> Confirm with the user, document cause and fix, escalate what’s beyond my access.</li>
+    <p class="section__note steps__lede">I treat every issue as a system problem, not a single symptom: define who is affected, decide what matters most, check every layer, find the root cause, then fix it so it stays fixed.</p>
+    <ol class="steps steps--deep">
+      <li><b>Define the scope and the users.</b> Who is blocked, how many people, which roles or locations, since when, and what work has stopped. One user and a whole department are different problems.</li>
+      <li><b>Prioritize by impact.</b> Widespread or work-stopping issues come first. If people can’t work, I restore service with a safe workaround or rollback, then investigate.</li>
+      <li><b>Check the whole system.</b> Go layer by layer: account and permissions, device, network and DNS, application, data and integrations. Compare a user who works with one who doesn’t to narrow it down.</li>
+      <li><b>Find the root cause.</b> Reproduce it, get the exact error, check recent changes, and test one cause at a time. A reset that clears the symptom isn’t the answer until I know why it happened.</li>
+      <li><b>Fix, verify, close the loop.</b> Apply the fix within policy with a rollback ready, confirm with the affected users, document cause and fix, update the guide or setting that prevents a repeat, and escalate what’s beyond my access.</li>
     </ol>
   </div>
 </section>
