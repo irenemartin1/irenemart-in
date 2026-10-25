@@ -421,3 +421,7 @@ a:hover { color: var(--plum); text-decoration-thickness: 2px; }
 .notfound { padding: 80px 0 100px; }
 .notfound p { margin-top: 12px; color: var(--ink-2); }
 .notfound .btn { margin-top: 22px; }
+/* v30: "next to learn" row reads as a note, not a claim */
+.fit__next dd { color: var(--muted); font-style: normal; }
+.fit__next dt { color: var(--ink-2); }
+@media (max-width: 440px) { .hide-sm { display: none; } }
