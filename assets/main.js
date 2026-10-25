@@ -71,7 +71,7 @@
       });
     });
   }, { rootMargin: "-45% 0px -50% 0px" });
-  ["hero", "fit", "work", "contact"].forEach(function (id) {
+  ["hero", "fit", "approach", "systems", "experience", "skills", "contact"].forEach(function (id) {
     var s = document.getElementById(id);
     if (s) spy.observe(s);
   });
