@@ -125,7 +125,10 @@ a:hover { color: var(--plum); text-decoration-thickness: 2px; }
 .fit thead th { padding: 12px 20px; text-align: left; background: var(--plum); color: var(--cream); font: 500 11.5px/1.3 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
 .fit tbody th, .fit tbody td { padding: 15px 20px; text-align: left; vertical-align: top; border-top: 1px solid var(--line); }
 .fit tbody tr:first-child th, .fit tbody tr:first-child td { border-top: 0; }
-.fit tbody th { width: 34%; font: 600 16.5px/1.35 var(--serif); color: var(--ink); border-right: 1px solid var(--line); }
+.fit tbody th { width: 40%; font: 600 15.5px/1.4 var(--serif); color: var(--ink); border-right: 1px solid var(--line); }
+.fit tbody th q { quotes: "\201C" "\201D"; }
+.fit__src { display: block; margin-top: 6px; font: 500 10.5px/1.3 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--plum-2); }
+.fit__intro { margin: -14px 0 14px; font-size: 14px; color: var(--muted); }
 .fit tbody th::before { content: "→"; display: none; }
 .fit td { font-size: 15px; line-height: 1.55; color: var(--ink-2); }
 .fit tbody tr:nth-child(even) { background: rgba(239, 232, 244, .45); }
