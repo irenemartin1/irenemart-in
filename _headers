@@ -7,3 +7,14 @@
 
 /assets/*
   Cache-Control: public, max-age=86400
+
+/resume/*
+  Cache-Control: no-cache
+
+/assets/Irene-Martin-Resume.pdf
+  Cache-Control: no-cache
+  Content-Type: application/pdf
+
+/resume/Irene-Martin-Resume.pdf
+  Content-Type: application/pdf
+  Content-Disposition: inline; filename="Irene-Martin-Resume.pdf"

@@ -355,3 +355,12 @@ a:hover { color: var(--plum); text-decoration-thickness: 2px; }
 .btn--resume .ico { width: 16px; height: 16px; }
 @media (max-width: 640px) { .btn--resume { width: auto; } }
 @media (max-width: 380px) { .brand__role { font-size: 8.5px; } }
+/* v26: resume viewer page */
+.resume-back { font-size: 14.5px; }
+.resume { padding-top: 28px; padding-bottom: 56px; max-width: 920px; }
+.resume__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; }
+.resume__title { font: 600 clamp(26px, 3vw, 34px)/1.1 var(--serif); color: var(--ink); }
+.resume__pages { margin-top: 20px; display: grid; gap: 18px; }
+.resume__page { display: block; width: 100%; height: auto; background: #fff; border: 1px solid var(--line); border-radius: 4px; box-shadow: 0 14px 30px -22px rgba(33, 26, 40, .45); }
+.resume__foot { margin-top: 22px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; }
+@media (max-width: 640px) { .resume-page .brand__role { display: block; } }
