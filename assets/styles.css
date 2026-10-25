@@ -425,3 +425,19 @@ a:hover { color: var(--plum); text-decoration-thickness: 2px; }
 .fit__next dd { color: var(--muted); font-style: normal; }
 .fit__next dt { color: var(--ink-2); }
 @media (max-width: 440px) { .hide-sm { display: none; } }
+/* v31: clickable links on the resume page images */
+.resume__sheet { position: relative; }
+.resume__hot { position: absolute; display: block; border-radius: 3px; min-height: 14px; }
+.resume__hot:hover { background: rgba(107, 63, 136, .14); }
+.resume__hot:focus-visible { outline: 2px solid var(--plum-2); outline-offset: 2px; }
+@media (hover: none) { .resume__hot { margin: -6px -4px; padding: 6px 4px; box-sizing: content-box; } }
+.rh1 { left: 7.19%; top: 17.6%; width: 13.78%; height: 1.38%; }
+.rh2 { left: 31.34%; top: 15.18%; width: 64.17%; height: 2.42%; }
+.rh3 { left: 18.15%; top: 15.18%; width: 13.2%; height: 2.42%; }
+.rh4 { left: 16.57%; top: 10.88%; width: 13.77%; height: 1.45%; }
+.rh5 { left: 22.37%; top: 77.89%; width: 10.24%; height: 1.64%; }
+.rh6 { left: 25.82%; top: 12.4%; width: 29.89%; height: 1.45%; }
+.rh7 { left: 5.88%; top: 12.4%; width: 17.76%; height: 1.45%; }
+.rh8 { left: 32.52%; top: 10.88%; width: 8.76%; height: 1.45%; }
+.rh9 { left: 44.3%; top: 11.59%; width: 8.76%; height: 1.45%; }
+.rh10 { left: 27.16%; top: 8.07%; width: 16.28%; height: 1.64%; }
