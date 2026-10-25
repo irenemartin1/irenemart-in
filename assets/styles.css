@@ -431,6 +431,8 @@ a:hover { color: var(--plum); text-decoration-thickness: 2px; }
 .resume__hot:hover { background: rgba(107, 63, 136, .14); }
 .resume__hot:focus-visible { outline: 2px solid var(--plum-2); outline-offset: 2px; }
 @media (hover: none) { .resume__hot { margin: -6px -4px; padding: 6px 4px; box-sizing: content-box; } }
+.show-sm { display: none; }
+@media (max-width: 440px) { .show-sm { display: inline; } }
 .rh1 { left: 7.19%; top: 17.6%; width: 13.78%; height: 1.38%; }
 .rh2 { left: 31.34%; top: 15.18%; width: 64.17%; height: 2.42%; }
 .rh3 { left: 18.15%; top: 15.18%; width: 13.2%; height: 2.42%; }
@@ -441,5 +443,3 @@ a:hover { color: var(--plum); text-decoration-thickness: 2px; }
 .rh8 { left: 32.52%; top: 10.88%; width: 8.76%; height: 1.45%; }
 .rh9 { left: 44.3%; top: 8.07%; width: 8.76%; height: 1.45%; }
 .rh10 { left: 27.16%; top: 4.55%; width: 16.28%; height: 1.64%; }
-.show-sm { display: none; }
-@media (max-width: 440px) { .show-sm { display: inline; } }
