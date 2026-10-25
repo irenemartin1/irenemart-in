@@ -29,7 +29,7 @@
       });
     });
   }, { rootMargin: "-45% 0px -50% 0px" });
-  ["intro", "work", "experience", "troubleshooting", "contact"].forEach(function (id) {
+  ["intro", "skills", "work", "experience", "troubleshooting", "contact"].forEach(function (id) {
     var s = document.getElementById(id);
     if (s) spy.observe(s);
   });
