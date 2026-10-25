@@ -40,13 +40,12 @@
   window.addEventListener("resize", checkGalleries);
   window.addEventListener("load", checkGalleries);
 
-  /* Hide resume links until the PDF is actually uploaded */
-  var resumeLinks = document.querySelectorAll("[data-resume]");
-  if (resumeLinks.length && window.fetch) {
-    fetch(resumeLinks[0].getAttribute("href"), { method: "HEAD" }).then(function (r) {
-      var type = r.headers.get("content-type") || "";
-      if (!r.ok || type.indexOf("pdf") === -1) Array.prototype.forEach.call(resumeLinks, function (a) { a.hidden = true; });
-    }).catch(function () {});
+  /* Mobile: show a sticky Resume button once the hero has scrolled out of view */
+  var sticky = document.querySelector(".sticky-resume"), hero = document.getElementById("hero");
+  if (sticky && hero && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (es) {
+      sticky.classList.toggle("is-visible", !es[0].isIntersecting);
+    }, { threshold: 0 }).observe(hero);
   }
 
   /* In-page links: move keyboard focus to the target section */
@@ -71,7 +70,7 @@
       });
     });
   }, { rootMargin: "-45% 0px -50% 0px" });
-  ["hero", "why", "work", "contact"].forEach(function (id) {
+  ["hero", "fit", "work", "contact"].forEach(function (id) {
     var s = document.getElementById(id);
     if (s) spy.observe(s);
   });
