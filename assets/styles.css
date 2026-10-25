@@ -151,5 +151,6 @@ a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 .footer { padding: 24px 0 40px; font-size: 14px; color: var(--muted); }
 .footer__inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; border-top: 1px solid var(--line); padding-top: 20px; }
 
+@media (max-width: 360px) { .nav { gap: 12px; } .nav a { font-size: 13px; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print { .topbar { display: none; } .section__label { position: static; } }
