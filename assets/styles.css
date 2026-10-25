@@ -347,8 +347,11 @@ a:hover { color: var(--plum); text-decoration-thickness: 2px; }
   .nav a { font-size: 13px; }
   .nav__resume { padding: 6px 11px !important; }
 }
-@media (max-width: 420px) { .brand__role { display: none; } .brand__name { font-size: 15px; } }
 @media (max-width: 360px) { .nav { gap: 8px; } .nav a { font-size: 12.5px; } .nav__resume { padding: 5px 9px !important; } }
 .nav a, .stats__link { white-space: nowrap; }
 @media (max-width: 400px) { .nav { gap: 9px; } .nav a { font-size: 12.5px; } .brand__name { font-size: 14.5px; } }
-@media (max-width: 350px) { .brand { display: none; } .topbar__inner { justify-content: flex-end; } }
+/* v25: smaller hero resume button, no nav pill */
+.btn--resume { min-height: 44px; padding: 0 18px; gap: 8px; font-size: 15px; box-shadow: 0 6px 14px -10px rgba(74, 37, 101, .7); }
+.btn--resume .ico { width: 16px; height: 16px; }
+@media (max-width: 640px) { .btn--resume { width: auto; } }
+@media (max-width: 380px) { .brand__role { font-size: 8.5px; } }
