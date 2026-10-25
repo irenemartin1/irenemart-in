@@ -40,15 +40,6 @@
   window.addEventListener("resize", checkGalleries);
   window.addEventListener("load", checkGalleries);
 
-  /* Hide resume links until the PDF is actually uploaded (they show automatically once it exists) */
-  var resumeLinks = document.querySelectorAll("[data-resume]");
-  if (resumeLinks.length && window.fetch) {
-    fetch(resumeLinks[0].getAttribute("href"), { method: "HEAD", cache: "no-store" }).then(function (r) {
-      var type = r.headers.get("content-type") || "";
-      if (!r.ok || type.indexOf("pdf") === -1) Array.prototype.forEach.call(resumeLinks, function (a) { a.hidden = true; });
-    }).catch(function () {});
-  }
-
   /* In-page links: move keyboard focus to the target section */
   document.addEventListener("click", function (e) {
     var a = e.target.closest('a[href^="#"]');

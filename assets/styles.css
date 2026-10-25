@@ -328,3 +328,27 @@ a:hover { color: var(--plum); text-decoration-thickness: 2px; }
 @media (max-width: 380px) { .nav { gap: 11px; } .nav a { font-size: 13px; } }
 .id__meta a { display: inline-block; padding: 3px 0; }
 @media (max-width: 640px) { .id__meta { display: block; margin-top: 8px; } .id__meta li { margin-top: 2px; } .id__meta li + li::before { content: none; } }
+
+/* ===== v24: resume buttons ===== */
+.hero__resume { margin-top: 22px; }
+.btn--resume { min-height: 54px; padding: 0 26px; gap: 10px; font-size: 16px; font-weight: 600; background: var(--plum); color: var(--cream); box-shadow: 0 10px 22px -10px rgba(74, 37, 101, .75); }
+.btn--resume .ico { width: 18px; height: 18px; }
+.btn--resume:hover { background: var(--ink); color: var(--cream); }
+.nav__resume { display: inline-block; padding: 6px 14px !important; border-radius: 999px; background: var(--plum); color: var(--cream) !important; font-weight: 600; box-shadow: none !important; }
+.nav__resume:hover { background: var(--ink); }
+.contact__row { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 14px 22px; }
+.btn--resume-dark { background: var(--cream); color: var(--plum); box-shadow: none; }
+.btn--resume-dark:hover { background: var(--lilac); color: var(--night); }
+.contact .btn--resume-dark { text-decoration: none; }
+@media (max-width: 860px) { .contact__row { justify-content: flex-start; } }
+@media (max-width: 640px) {
+  .btn--resume { width: 100%; justify-content: center; }
+  .nav { gap: 10px; }
+  .nav a { font-size: 13px; }
+  .nav__resume { padding: 6px 11px !important; }
+}
+@media (max-width: 420px) { .brand__role { display: none; } .brand__name { font-size: 15px; } }
+@media (max-width: 360px) { .nav { gap: 8px; } .nav a { font-size: 12.5px; } .nav__resume { padding: 5px 9px !important; } }
+.nav a, .stats__link { white-space: nowrap; }
+@media (max-width: 400px) { .nav { gap: 9px; } .nav a { font-size: 12.5px; } .brand__name { font-size: 14.5px; } }
+@media (max-width: 350px) { .brand { display: none; } .topbar__inner { justify-content: flex-end; } }
