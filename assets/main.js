@@ -7,6 +7,13 @@
     el.textContent = new Date().getFullYear();
   });
 
+  /* Screenshot slots: show a placeholder until the image file exists */
+  Array.prototype.forEach.call(document.querySelectorAll("[data-shot] img"), function (img) {
+    var miss = function () { img.parentNode.classList.add("is-missing"); };
+    if (img.complete && img.naturalWidth === 0) miss();
+    img.addEventListener("error", miss);
+  });
+
   /* In-page links: move keyboard focus to the target section */
   document.addEventListener("click", function (e) {
     var a = e.target.closest('a[href^="#"]');
