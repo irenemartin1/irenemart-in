@@ -25,16 +25,16 @@
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="preload" href="/assets/fonts/cormorant-garamond.woff" as="font" type="font/woff" crossorigin>
-  <link rel="stylesheet" href="/assets/styles.css?v=10">
-  <script src="/assets/main.js?v=10" defer></script>
+  <link rel="preload" href="/assets/fonts/source-serif-4-600.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="/assets/styles.css?v=11">
+  <script src="/assets/main.js?v=11" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="topbar" id="top">
   <div class="wrap topbar__inner">
-    <a class="brand" href="#top">Irene Martin</a>
+    <a class="brand" href="#top"><span class="brand__mark" aria-hidden="true">IM</span>Irene Martin</a>
     <nav aria-label="Primary">
       <ul class="nav">
         <li><a href="#why">Why me</a></li>
@@ -50,33 +50,33 @@
 <!-- Hero -->
 <section class="hero" id="hero" aria-labelledby="hero-title">
   <div class="wrap hero__grid">
-    <figure class="bookplate">
-      <div class="bookplate__frame">
-        <img class="portrait" src="/assets/irene-480.jpg" srcset="/assets/irene-480.jpg 480w, /assets/irene-800.jpg 800w" sizes="(max-width: 700px) 112px, 210px" width="480" height="600" alt="Portrait of Irene Martin">
-      </div>
+    <figure class="idcard">
+      <img class="portrait" src="/assets/irene-480.jpg" srcset="/assets/irene-480.jpg 480w, /assets/irene-800.jpg 800w" sizes="(max-width: 760px) 104px, 200px" width="480" height="600" alt="Portrait of Irene Martin">
       <figcaption>
-        <span class="bookplate__name">Irene Martin</span>
-        <span class="bookplate__rule" aria-hidden="true"></span>
-        <span class="bookplate__meta">Orlando, FL</span>
-        <span class="bookplate__meta">English &amp; Spanish</span>
+        <span class="idcard__name">Irene Martin</span>
+        <dl class="idcard__rows">
+          <div><dt>Loc</dt><dd>Orlando, FL</dd></div>
+          <div><dt>Lang</dt><dd>English · Spanish</dd></div>
+          <div><dt>Seeking</dt><dd>IT Systems Admin</dd></div>
+        </dl>
       </figcaption>
     </figure>
     <div class="hero__text">
-      <p class="eyebrow">Applying for IT Systems Administrator · Orange County Library System</p>
+      <p class="eyebrow">Candidate · IT Systems Administrator · Orange County Library System</p>
       <h1 id="hero-title">IT systems, access <span class="amp">&amp;</span> technical operations.</h1>
-      <p class="hero__lede">I build and support business applications and troubleshoot access and workflow issues. Before that, I onboarded, trained and set up accounts for 300+ people, and kept the tools working for a team of up to 80.</p>
+      <p class="hero__lede">Account provisioning, application support and troubleshooting. 300+ users onboarded and trained; 6 software projects delivered.</p>
       <p class="hero__actions">
         <a class="btn" href="#why">Why hire me</a>
-        <a class="btn btn--outline" href="/assets/Irene-Martin-Resume.pdf" download>Download resume (PDF)</a>
+        <a class="btn btn--outline" href="/assets/Irene-Martin-Resume.pdf" download data-resume>Download resume (PDF)</a>
         <a class="textlink" href="#work">See the work</a>
       </p>
     </div>
   </div>
   <div class="wrap">
     <ul class="stats" aria-label="At a glance">
-      <li><b>300+</b><span>people onboarded &amp; trained</span></li>
+      <li><b>300+</b><span>users onboarded &amp; trained</span></li>
       <li><b>6</b><span>software projects delivered</span></li>
-      <li><b>80</b><span>staff supported</span></li>
+      <li><b>80</b><span>concurrent staff supported</span></li>
       <li><b>34</b><span>platform users</span></li>
     </ul>
   </div>
@@ -85,54 +85,52 @@
 <!-- Why hire me -->
 <section class="section" id="why" aria-labelledby="why-title">
   <div class="wrap">
-    <p class="callno" aria-hidden="true">Call no. 004</p>
-    <h2 id="why-title" class="title">Why hire me</h2>
-    <p class="intro">How I think, what the role needs, and where I’ve already done it.</p>
+    <header class="sec-head">
+      <p class="callno" aria-hidden="true">004</p>
+      <h2 id="why-title" class="title">Why hire me</h2>
+    </header>
 
-    <aside class="catalog" aria-labelledby="approach-title">
-      <div class="catalog__head">
-        <span>MARTIN, Irene</span>
-        <h3 id="approach-title">How I approach things</h3>
-      </div>
-      <dl class="catalog__body">
-        <div><dt>People first</dt><dd>I start with what the person is trying to get done, not just the error on their screen.</dd></div>
-        <div><dt>Calm &amp; methodical</dt><dd>Under pressure I slow down: scope it, test one thing, keep a way back.</dd></div>
-        <div><dt>Ownership</dt><dd>If I pick something up, I see it through — fixed, confirmed with the user, written down.</dd></div>
-        <div><dt>Always learning</dt><dd>I went from supporting systems to building them. I learn a new environment by working in it and asking good questions.</dd></div>
-        <div><dt>Leave it clearer</dt><dd>Clean permissions, clear docs, no mystery settings — so the next person isn’t starting from zero.</dd></div>
-      </dl>
-    </aside>
+    <div class="principles" aria-labelledby="principles-title">
+      <h3 id="principles-title" class="label">Operating principles</h3>
+      <ol>
+        <li><b>User impact first</b><span>Scope by who is blocked and what they can’t do.</span></li>
+        <li><b>Isolate, then change</b><span>One variable at a time, always with rollback.</span></li>
+        <li><b>Least privilege</b><span>Access matches role. Verified, not assumed.</span></li>
+        <li><b>Close the loop</b><span>Confirm with the user. Document cause and fix.</span></li>
+        <li><b>Leave it documented</b><span>No undocumented settings. The next admin starts informed.</span></li>
+      </ol>
+    </div>
 
-    <h3 class="subtitle subtitle--tight">What the role needs</h3>
+    <h3 class="label label--spaced">Role requirements → evidence</h3>
     <ol class="fit">
       <li>
-        <h3>Accounts &amp; access</h3>
-        <p>Onboarded 300+ people in two years — accounts, permissions and records — on a team of up to 80. Built Google sign-in, role-based permissions and database security policies into a live multi-role platform.</p>
+        <h4>Accounts &amp; access</h4>
+        <p>Provisioned accounts, permissions and records for 300+ users in 2 years. Implemented Google OAuth, RBAC and database access policies on a live multi-role platform.</p>
       </li>
       <li>
-        <h3>Troubleshooting &amp; user support</h3>
-        <p>Resolved staff login, application access, Windows PC, and connectivity issues.</p>
+        <h4>Troubleshooting &amp; user support</h4>
+        <p>Resolved login, application access, Windows PC and connectivity issues for up to 80 concurrent staff.</p>
       </li>
       <li>
-        <h3>DNS, deployment &amp; change control</h3>
-        <p>Configure Cloudflare domains, DNS and hosting. Every change tracked in Git with rollback, and verified across user roles before it’s called done.</p>
+        <h4>DNS, deployment &amp; change control</h4>
+        <p>Cloudflare domains, DNS and hosting. Git-tracked releases with rollback, verified per user role before release.</p>
       </li>
       <li>
-        <h3>Documentation &amp; training</h3>
-        <p>Trained 300+ people in insurance sales and wrote the procedures they worked from. Built an in-app help center with role-based guides and walkthroughs for a 34-user platform. I explain technical steps clearly — in English and Spanish.</p>
+        <h4>Documentation &amp; training</h4>
+        <p>Trained 300+ people; wrote their procedures. Built a role-based in-app help center for a 34-user platform. English and Spanish.</p>
       </li>
       <li>
-        <h3>Care with sensitive data</h3>
-        <p>Managed licensing, compliance, scheduling and payroll tracking, and handled confidential employee records.</p>
+        <h4>Sensitive data</h4>
+        <p>Maintained licensing, compliance, scheduling and payroll records. Handled confidential employee data.</p>
       </li>
       <li>
-        <h3>Ready for AI rollout</h3>
-        <p>I build with Claude and other AI tools daily and have helped businesses adopt them in real workflows. I can support configuration, access, and staff training for an enterprise AI rollout.</p>
+        <h4>AI rollout readiness</h4>
+        <p>Daily builder with Claude and other AI tools; helped businesses adopt them in production workflows. Ready to support configuration, access and training for an enterprise rollout.</p>
       </li>
     </ol>
 
     <div class="method">
-      <h3 class="method__title">How I troubleshoot</h3>
+      <h3 class="label">Troubleshooting procedure</h3>
       <ol class="method__steps">
         <li>Scope the problem</li>
         <li>Check access &amp; connectivity</li>
@@ -142,6 +140,7 @@
       </ol>
     </div>
 
+    <h3 class="label label--spaced">Skills index</h3>
     <dl class="kit">
       <div><dt>Accounts &amp; Access</dt><dd>User provisioning, Google OAuth, role-based access control (RBAC), database access policies, permission testing</dd></div>
       <div><dt>Workstation &amp; User Support</dt><dd>Windows and macOS setup and troubleshooting, login/access/connectivity issues, user guidance, documentation</dd></div>
@@ -157,8 +156,10 @@
 <!-- Work + experience -->
 <section class="section section--tint" id="work" aria-labelledby="work-title">
   <div class="wrap">
-    <p class="callno" aria-hidden="true">Call no. 005</p>
-    <h2 id="work-title" class="title">Work</h2>
+    <header class="sec-head">
+      <p class="callno" aria-hidden="true">005</p>
+      <h2 id="work-title" class="title">Work</h2>
+    </header>
 
     <div class="projects">
       <article class="project" aria-labelledby="mdsky-title">
@@ -168,9 +169,9 @@
           <p class="project__sub">Multi-role logistics operations platform</p>
           <ul class="ticks">
             <li>Supports 34 users in daily operations</li>
-            <li>Four role-based apps (owner, dispatcher, driver, customer) on shared shipment records</li>
+            <li>4 role-based apps (owner, dispatcher, driver, customer) on shared shipment records</li>
             <li>Google OAuth and database policies limiting data by role and ownership</li>
-            <li>In-app support center: role-based help articles and guided walkthroughs for admins, dispatchers, drivers, and customers</li>
+            <li>In-app support center: role-based help articles and guided walkthroughs</li>
             <li>Permission testing per role, Git-tracked releases, Cloudflare deploy with custom DNS</li>
           </ul>
           <p class="project__foot"><a class="btn" href="https://mdskyos.com/" rel="noopener" target="_blank">Visit mdskyos.com<span class="sr-only"> (opens in new tab)</span> ↗</a><span>React · Supabase · PostgreSQL · Cloudflare</span></p>
@@ -209,7 +210,7 @@
             <li>Customer booking site with a database-backed admin portal</li>
             <li>Live Square integration for appointments</li>
             <li>Admin views for bookings, clients and pets, service zones, and terms</li>
-            <li>Tested end to end, from customer submission to admin review</li>
+            <li>End-to-end tested: customer submission → admin review</li>
           </ul>
           <p class="project__foot"><a class="btn" href="https://mysweetpawtner.com/" rel="noopener" target="_blank">Visit mysweetpawtner.com<span class="sr-only"> (opens in new tab)</span> ↗</a></p>
         </div>
@@ -233,20 +234,20 @@
       </article>
     </div>
 
-    <h3 class="subtitle">Experience</h3>
+    <h3 class="label label--spaced">Experience</h3>
     <ol class="timeline">
       <li>
         <p class="timeline__date">May 2025 – Present</p>
         <div>
           <p class="timeline__role"><b>Founder</b>, eBuilt.app</p>
-          <p>Sold and delivered 6 software projects of varying complexity, including a 34-user logistics platform. Build, deploy and support business applications; configure authentication, permissions, databases, DNS and integrations; build AI-assisted tools and automations; fix bugs and access issues with clients.</p>
+          <p>Sold and delivered 6 software projects, including a 34-user logistics platform. Authentication, permissions, databases, DNS, integrations and AI-assisted automations; client support and bug fixes.</p>
         </div>
       </li>
       <li>
         <p class="timeline__date">May 2023 – May 2025</p>
         <div>
           <p class="timeline__role"><b>Insurance Sales Representative → Operations Systems &amp; Sales Manager</b>, Prime Healthcare</p>
-          <p>Onboarded, trained and set up accounts and permissions for 300+ people in two years, including training in insurance sales. Supported up to 80 employees and agents at a time with login, Windows PC and platform issues, procedures, and spreadsheet-based tracking for licensing, compliance, scheduling and payroll.</p>
+          <p>Onboarded, trained and provisioned 300+ people in 2 years, including insurance-sales training. Supported up to 80 concurrent staff: login, Windows PC and platform issues, procedures, and tracking for licensing, compliance, scheduling and payroll.</p>
         </div>
       </li>
     </ol>
@@ -257,13 +258,13 @@
 <section class="contact" id="contact" aria-labelledby="contact-title">
   <div class="wrap contact__grid">
     <div>
-      <p class="callno" aria-hidden="true">Call no. 020</p>
+      <p class="callno" aria-hidden="true">020</p>
       <h2 id="contact-title" class="title">Contact</h2>
       <p class="contact__note">Orlando, Florida · English &amp; Spanish</p>
     </div>
     <div class="contact__links">
       <a class="contact__email" href="mailto:hello@irenemart.in">hello@irenemart.in</a>
-      <p><a href="https://www.linkedin.com/in/irene-martin-a4ab85222" rel="noopener" target="_blank">LinkedIn<span class="sr-only"> (opens in new tab)</span> ↗</a> <a href="https://github.com/irenemartin1" rel="noopener" target="_blank">GitHub<span class="sr-only"> (opens in new tab)</span> ↗</a> <a href="/assets/Irene-Martin-Resume.pdf" download>Resume (PDF) ↓</a></p>
+      <p><a href="https://www.linkedin.com/in/irene-martin-a4ab85222" rel="noopener" target="_blank">LinkedIn<span class="sr-only"> (opens in new tab)</span> ↗</a> <a href="https://github.com/irenemartin1" rel="noopener" target="_blank">GitHub<span class="sr-only"> (opens in new tab)</span> ↗</a> <a href="/assets/Irene-Martin-Resume.pdf" download data-resume>Resume (PDF) ↓</a></p>
     </div>
   </div>
   <div class="wrap footer">
