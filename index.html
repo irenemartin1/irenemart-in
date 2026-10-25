@@ -3,28 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Irene Martin — IT Systems &amp; Applications</title>
-  <meta name="description" content="Irene Martin, Orlando FL. I build and support business applications, configure access and integrations, test changes and troubleshoot problems.">
+  <title>Irene Martin — Applications, Access &amp; Support</title>
+  <meta name="description" content="Irene Martin, Orlando FL. I build, test and support business applications, and spent years running accounts, training and daily systems for an operations team.">
   <meta name="author" content="Irene Martin">
   <meta name="theme-color" content="#f5f2ea">
   <link rel="canonical" href="https://irenemart.in/">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Irene Martin">
-  <meta property="og:title" content="Irene Martin — IT Systems &amp; Applications">
-  <meta property="og:description" content="IT systems, applications &amp; the people behind them. Selected work, troubleshooting approach and experience.">
+  <meta property="og:title" content="Irene Martin — Applications, Access &amp; Support">
+  <meta property="og:description" content="Selected work, experience and how I troubleshoot. Orlando, Florida · English &amp; Spanish.">
   <meta property="og:url" content="https://irenemart.in/">
-  <meta property="og:image" content="https://irenemart.in/assets/og-image.png">
+  <meta property="og:image" content="https://irenemart.in/assets/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Irene Martin — IT systems, applications &amp; the people behind them">
+  <meta property="og:image:alt" content="Irene Martin — portrait and name">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Irene Martin — IT Systems &amp; Applications">
-  <meta name="twitter:description" content="IT systems, applications &amp; the people behind them.">
-  <meta name="twitter:image" content="https://irenemart.in/assets/og-image.png">
+  <meta name="twitter:title" content="Irene Martin — Applications, Access &amp; Support">
+  <meta name="twitter:description" content="Selected work, experience and how I troubleshoot.">
+  <meta name="twitter:image" content="https://irenemart.in/assets/og-image.jpg">
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preload" as="image" href="/assets/irene-800.webp" imagesrcset="/assets/irene-480.webp 480w, /assets/irene-800.webp 800w, /assets/irene-1200.webp 1200w" imagesizes="(max-width: 760px) 60vw, 340px">
   <link rel="stylesheet" href="/assets/styles.css">
   <script src="/assets/main.js" defer></script>
 </head>
@@ -37,8 +38,8 @@
     <nav aria-label="Primary">
       <ul class="nav">
         <li><a href="#work">Work</a></li>
-        <li><a href="#approach">Approach</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -47,250 +48,194 @@
 
 <main id="main">
 
-<!-- A. Introduction -->
-<section class="intro" aria-labelledby="intro-title">
+<!-- Introduction -->
+<section class="intro" id="intro" aria-labelledby="intro-title">
   <div class="wrap intro__grid">
-    <div>
-      <p class="intro__name">Irene Martin</p>
-      <h1 id="intro-title">IT systems, applications &amp; the people behind them.</h1>
-      <p class="intro__lede">I build and support business applications — configuring sign-in, roles and integrations, testing every change, and tracing problems to their cause when something stops working.</p>
-      <p class="intro__meta">Orlando, Florida <span aria-hidden="true">·</span> Fluent in English and Spanish</p>
-      <p class="intro__links">
-        <a class="btn" href="#work">Selected work</a>
-        <a class="textlink" href="https://www.linkedin.com/in/irene-martin-a4ab85222" rel="noopener" target="_blank">LinkedIn<span class="sr-only"> (opens in new tab)</span> ↗</a>
-        <a class="textlink" href="https://github.com/irenemartin1" rel="noopener" target="_blank">GitHub<span class="sr-only"> (opens in new tab)</span> ↗</a>
-      </p>
-    </div>
-    <aside class="intro__aside" aria-label="At a glance">
-      <p class="label">Selected work</p>
-      <ul class="glance">
-        <li><a href="#mdsky"><b>M.D. Sky OS</b><span>Logistics platform · four role-specific apps</span></a></li>
-        <li><a href="#pawtner"><b>My Sweet Pawtner</b><span>Booking site &amp; admin portal</span></a></li>
-      </ul>
-      <p class="label">Before that</p>
-      <p class="glance__note">Agent to administrative &amp; sales manager at Prime Healthcare, supporting a team of up to 50.</p>
-    </aside>
-  </div>
-</section>
-
-<!-- B. Selected work -->
-<section class="section" id="work" aria-labelledby="work-title">
-  <div class="wrap">
-    <h2 id="work-title" class="section__title">Selected work</h2>
-
-    <article class="project" id="mdsky" aria-labelledby="mdsky-title">
-      <header class="project__head">
-        <h3 id="mdsky-title">M.D. Sky OS</h3>
-        <p class="project__kind">Logistics operations platform</p>
-        <dl class="project__meta">
-          <div><dt>Live</dt><dd><a href="https://mdskyos.com/" rel="noopener" target="_blank">mdskyos.com<span class="sr-only"> (opens in new tab)</span> ↗</a></dd></div>
-          <div><dt>Role</dt><dd>Design, build, configuration, testing and deployment</dd></div>
-          <div><dt>Stack</dt><dd>Supabase · PostgreSQL · Google sign-in · Cloudflare · GitHub</dd></div>
-        </dl>
-      </header>
-
-      <p class="project__lede">A trucking company’s owner, dispatchers, drivers and customers each work in their own interface, on shared data. Who can see and change what is enforced at the data layer — not just hidden in the menus.</p>
-
-      <figure class="figure" data-arch aria-labelledby="arch-cap">
-        <div class="figure__bar">
-          <figcaption id="arch-cap" class="label">Architecture — simplified illustration</figcaption>
-          <div class="seg" role="group" aria-label="Show a role">
-            <button type="button" data-role="admin" aria-pressed="true">Owner</button>
-            <button type="button" data-role="dispatch" aria-pressed="false">Dispatcher</button>
-            <button type="button" data-role="driver" aria-pressed="false">Driver</button>
-            <button type="button" data-role="customer" aria-pressed="false">Customer</button>
-          </div>
-        </div>
-        <div class="arch">
-          <div class="arch__col">
-            <p class="arch__h">People</p>
-            <span class="node" data-node="admin">Owner</span>
-            <span class="node" data-node="dispatch">Dispatcher</span>
-            <span class="node" data-node="driver">Driver</span>
-            <span class="node" data-node="customer">Customer</span>
-          </div>
-          <span class="arch__arrow" aria-hidden="true"></span>
-          <div class="arch__col">
-            <p class="arch__h">Sign-in</p>
-            <span class="node node--tall">Google sign-in<small>identifies the person</small></span>
-          </div>
-          <span class="arch__arrow" aria-hidden="true"></span>
-          <div class="arch__col">
-            <p class="arch__h">Access boundary</p>
-            <span class="node node--tall node--gate">Role check<small>every read and write</small></span>
-          </div>
-          <span class="arch__arrow" aria-hidden="true"></span>
-          <div class="arch__col">
-            <p class="arch__h">App &amp; data</p>
-            <span class="node node--on">Role-specific interface</span>
-            <span class="node">Database<small>Supabase / PostgreSQL</small></span>
-            <span class="node node--dashed">Third-party services<small>some integrations in progress</small></span>
-          </div>
-        </div>
-        <p class="arch__detail" aria-live="polite" data-arch-detail></p>
-      </figure>
-
-      <ol class="steps" aria-label="Workflow">
-        <li><b>Customer</b> requests a shipment</li>
-        <li><b>Dispatch</b> reviews and assigns</li>
-        <li><b>Driver</b> accepts and moves the load</li>
-        <li><b>Status</b> is recorded at each step</li>
-        <li><b>Owner &amp; customer</b> see where it stands</li>
-      </ol>
-
-      <ol class="focus">
-        <li><span>01</span><p><b>Four interfaces, one dataset.</b> Separate experiences for owners, dispatchers, drivers and customers, so each sees only their part of the work.</p></li>
-        <li><span>02</span><p><b>Sign-in, boundaries, integrations.</b> Google authentication, role rules on the database, custom domain and DNS on Cloudflare, and third-party service integration.</p></li>
-        <li><span>03</span><p><b>Tested from every side.</b> Each change is checked as every affected role — including attempts it should refuse — and tracked in Git so it can be rolled back.</p></li>
-      </ol>
-
-      <details class="more">
-        <summary>Testing practice &amp; project status</summary>
-        <div class="more__body">
-          <ul class="dash">
-            <li>Browser-based QA through each role’s workflow, end to end.</li>
-            <li>Permission and database-security checks: confirming access is refused where it should be, not only granted where it should be.</li>
-            <li>Bugs fixed, then the affected workflows re-tested.</li>
-            <li>Implementation, testing and release coordinated directly with the business owner.</li>
-          </ul>
-          <p class="status"><b>Live:</b> role-based app, authentication, core workflows, hosting and domain. <b>In progress:</b> additional third-party integrations, including transportation-management, and full rollout with the client’s team.</p>
-        </div>
-      </details>
-      <p class="attrib">Built by eBuilt.app</p>
-    </article>
-
-    <article class="project" id="pawtner" aria-labelledby="pawtner-title">
-      <header class="project__head">
-        <h3 id="pawtner-title">My Sweet Pawtner</h3>
-        <p class="project__kind">Booking &amp; administration</p>
-        <dl class="project__meta">
-          <div><dt>Live</dt><dd><a href="https://mysweetpawtner.com/" rel="noopener" target="_blank">mysweetpawtner.com<span class="sr-only"> (opens in new tab)</span> ↗</a></dd></div>
-          <div><dt>Role</dt><dd>Customer site, booking flow, admin portal, testing</dd></div>
-          <div><dt>Client</dt><dd>Pet-care business</dd></div>
-        </dl>
-      </header>
-
-      <p class="project__lede">A pet-care business needs more than a date from each booking: the service, the schedule and the pickup and drop-off arrangements. The booking flow collects exactly that, and each request lands in the admin portal as one complete record.</p>
-
-      <figure class="figure" data-pipe aria-labelledby="pipe-cap">
-        <div class="figure__bar">
-          <figcaption id="pipe-cap" class="label">Booking flow — simplified illustration</figcaption>
-        </div>
-        <ol class="pipe">
-          <li><button type="button" data-stage="0" aria-pressed="true">Service info</button></li>
-          <li><button type="button" data-stage="1" aria-pressed="false">Booking</button></li>
-          <li><button type="button" data-stage="2" aria-pressed="false">Pickup &amp; drop-off</button></li>
-          <li><button type="button" data-stage="3" aria-pressed="false">Admin portal</button></li>
-        </ol>
-        <p class="pipe__detail" aria-live="polite" data-pipe-detail></p>
-      </figure>
-
-      <details class="more">
-        <summary>Build &amp; project status</summary>
-        <div class="more__body">
-          <ul class="dash">
-            <li>Booking walked end to end as a customer, then checked from the admin side for complete, correct details.</li>
-            <li>Related workflows re-tested after each change.</li>
-            <li>Payments and automation planned as a separate step, so bookings don’t depend on them.</li>
-          </ul>
-          <p class="status"><b>Live:</b> website, booking flow and admin portal. <b>Planned / in configuration:</b> Square payments and automated processes.</p>
-        </div>
-      </details>
-      <p class="attrib">Built by eBuilt.app</p>
-    </article>
-  </div>
-</section>
-
-<!-- C. Approach -->
-<section class="section section--tint" id="approach" aria-labelledby="approach-title">
-  <div class="wrap">
-    <div class="approach__head">
-      <h2 id="approach-title" class="section__title">How I work through a problem</h2>
-      <p class="section__lede">Establish who is affected, follow the request through sign-in, access, the application and its data, then test a single explanation before acting on it. Each change is deliberate, recorded and reversible — and nothing is closed until the person who reported it confirms it works.</p>
-    </div>
-
-    <div class="ts" data-ts>
-      <p class="ts__flag"><span>Hypothetical example</span> Not a real incident — a walkthrough of method. Choose what the evidence shows.</p>
-      <ol class="ts__rail" aria-label="Stages">
-        <li data-rail="1">Scope</li>
-        <li data-rail="2">Investigate</li>
-        <li data-rail="3">Test</li>
-        <li data-rail="4">Resolve</li>
-        <li data-rail="5">Verify</li>
-      </ol>
-      <p class="ts__ticket">“Several users cannot access an application.”</p>
-      <div class="ts__card" data-ts-card tabindex="-1">
-        <noscript><p>This walkthrough needs JavaScript. Stages: scope the problem, investigate the relevant layer, test one hypothesis, make a controlled change, verify with the people affected.</p></noscript>
-      </div>
-      <div class="ts__controls">
-        <button type="button" class="btn btn--quiet" data-ts-back disabled>← Back</button>
-        <button type="button" class="btn btn--quiet" data-ts-reset>Start over</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- D. Experience & capabilities -->
-<section class="section" id="experience" aria-labelledby="exp-title">
-  <div class="wrap">
-    <h2 id="exp-title" class="section__title">Experience</h2>
-
-    <div class="exp">
-      <div class="caps">
-        <div class="cap">
-          <h3>Applications, authentication &amp; integrations</h3>
-          <p>Role-based access control, Google OAuth, REST APIs and third-party services; application configuration, debugging and release coordination.</p>
-        </div>
-        <div class="cap">
-          <h3>Cloud, data &amp; version control</h3>
-          <p>Cloudflare domains and DNS, Supabase and PostgreSQL, database security checks, Git and GitHub history and rollback.</p>
-        </div>
-        <div class="cap">
-          <h3>Testing, troubleshooting &amp; recovery</h3>
-          <p>Functional and regression testing in the browser, permission validation, verification after changes, and restoring code, files or configuration from saved versions.</p>
-        </div>
-        <div class="cap">
-          <h3>User support, onboarding &amp; operations</h3>
-          <p>Account setup and access help, training materials and procedures, issue coordination and escalation, and careful handling of sensitive records.</p>
-        </div>
-      </div>
-
-      <dl class="tools">
-        <div><dt>Hands-on</dt><dd>JavaScript, React, REST APIs, command line, GitHub, Cloudflare, Supabase, Claude, ChatGPT, Gemini, Codex</dd></div>
-        <div><dt>Used &amp; supported others on</dt><dd>Google Workspace, Microsoft 365, RingCentral, Priority1, Sircon, insurance carrier platforms, QuickBooks, Square, Wix</dd></div>
+    <div class="intro__text">
+      <h1 id="intro-title">Irene Martin</h1>
+      <p class="intro__lede">I build, test and support business applications — sign-in and permissions, databases, domains, integrations, and the people who use them.</p>
+      <p class="intro__sub">Before that, I worked in operations — setting up accounts, training staff and keeping a team of up to 50 working with its tools.</p>
+      <dl class="facts">
+        <div><dt>Based in</dt><dd>Orlando, Florida</dd></div>
+        <div><dt>Languages</dt><dd>English and Spanish</dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:hello@irenemart.in">hello@irenemart.in</a></dd></div>
+        <div><dt>Profiles</dt><dd><a href="https://www.linkedin.com/in/irene-martin-a4ab85222" rel="noopener" target="_blank">LinkedIn<span class="sr-only"> (opens in new tab)</span></a> <span aria-hidden="true">·</span> <a href="https://github.com/irenemartin1" rel="noopener" target="_blank">GitHub<span class="sr-only"> (opens in new tab)</span></a></dd></div>
       </dl>
+    </div>
+    <figure class="portrait">
+      <picture>
+        <source type="image/webp" srcset="/assets/irene-480.webp 480w, /assets/irene-800.webp 800w, /assets/irene-1200.webp 1200w" sizes="(max-width: 760px) 60vw, 340px">
+        <img src="/assets/irene-800.jpg" srcset="/assets/irene-480.jpg 480w, /assets/irene-800.jpg 800w, /assets/irene-1200.jpg 1200w" sizes="(max-width: 760px) 60vw, 340px" width="800" height="1000" alt="Irene Martin, smiling, in a black top against a dark background">
+      </picture>
+    </figure>
+  </div>
+</section>
+
+<!-- Selected work -->
+<section class="section" id="work" aria-labelledby="work-title">
+  <div class="wrap section__grid">
+    <h2 id="work-title" class="section__label">Selected work</h2>
+    <div class="section__body">
+
+      <article class="project" aria-labelledby="mdsky-title">
+        <header class="project__head">
+          <h3 id="mdsky-title">M.D. Sky OS</h3>
+          <a class="project__link" href="https://mdskyos.com/" rel="noopener" target="_blank">mdskyos.com<span class="sr-only"> (opens in new tab)</span> ↗</a>
+        </header>
+        <p class="project__what">A dispatch and operations platform for a trucking company. The owner, dispatchers, drivers and customers each sign in to their own interface, working from the same shipment records.</p>
+
+        <table class="roles">
+          <caption>Who sees what — simplified</caption>
+          <tbody>
+            <tr><th scope="row">Owner</th><td>Everything; manages users and roles</td></tr>
+            <tr><th scope="row">Dispatcher</th><td>Open and active loads; assigns drivers</td></tr>
+            <tr><th scope="row">Driver</th><td>Only their assigned loads; updates status from a phone</td></tr>
+            <tr><th scope="row">Customer</th><td>Only their own shipments and where each stands</td></tr>
+          </tbody>
+        </table>
+
+        <dl class="details">
+          <div>
+            <dt>What I did</dt>
+            <dd>Designed and built it; configured Google sign-in, the Supabase/PostgreSQL database and the domain and DNS on Cloudflare; ran testing and releases with the owner.</dd>
+          </div>
+          <div>
+            <dt>Key decision</dt>
+            <dd>Access is enforced where data is read and written, not by hiding menu items — so a driver or customer who edits a URL still only reaches their own records.</dd>
+          </div>
+          <div>
+            <dt>Testing</dt>
+            <dd>After each change I sign in as every affected role and check what it can do — and what it should be refused. Changes are tracked in Git, so a broken release can be rolled back.</dd>
+          </div>
+          <div>
+            <dt>Status</dt>
+            <dd>Live: role-based app, sign-in, core dispatch workflows, hosting and domain. In progress: further third-party integrations, including transportation-management, and full rollout with the client’s team.</dd>
+          </div>
+        </dl>
+        <p class="project__meta">Supabase · PostgreSQL · Google OAuth · Cloudflare · GitHub — built through eBuilt.app</p>
+      </article>
+
+      <article class="project" aria-labelledby="pawtner-title">
+        <header class="project__head">
+          <h3 id="pawtner-title">My Sweet Pawtner</h3>
+          <a class="project__link" href="https://mysweetpawtner.com/" rel="noopener" target="_blank">mysweetpawtner.com<span class="sr-only"> (opens in new tab)</span> ↗</a>
+        </header>
+        <p class="project__what">The public website and booking system for a mobile pet-grooming business in Miami-Dade, with an admin portal where the owner manages incoming requests.</p>
+
+        <ol class="flow" aria-label="Booking flow">
+          <li>Service info</li>
+          <li>Booking</li>
+          <li>Pickup &amp; drop-off details</li>
+          <li>Admin portal</li>
+        </ol>
+
+        <dl class="details">
+          <div>
+            <dt>What I did</dt>
+            <dd>Built the site, the booking flow and the admin portal, and tested them end to end.</dd>
+          </div>
+          <div>
+            <dt>Key decision</dt>
+            <dd>The form asks for what the owner needs to deliver the service, including pickup and drop-off, so each request arrives complete instead of as a thread to follow up on.</dd>
+          </div>
+          <div>
+            <dt>Testing</dt>
+            <dd>I submit bookings as a customer would, then check the admin side to confirm every detail arrived complete and correct.</dd>
+          </div>
+          <div>
+            <dt>Status</dt>
+            <dd>Live: website, booking flow and admin portal. Not yet operational: Square payments and automated follow-ups.</dd>
+          </div>
+        </dl>
+        <p class="project__meta">Built through eBuilt.app</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section class="section" id="experience" aria-labelledby="exp-title">
+  <div class="wrap section__grid">
+    <h2 id="exp-title" class="section__label">Experience</h2>
+    <div class="section__body">
+
+      <div class="job">
+        <div class="job__head">
+          <h3>eBuilt.app</h3>
+          <p>Owner · builds and supports business software</p>
+        </div>
+        <ul class="list">
+          <li>Build, test, deploy and support web applications and operational workflows for small businesses.</li>
+          <li>Set up sign-in and role permissions, databases, domains and DNS, and third-party integrations.</li>
+          <li>Work directly with clients to understand how they operate, fix problems they report, and walk them through changes.</li>
+        </ul>
+      </div>
 
       <div class="job">
         <div class="job__head">
           <h3>Prime Healthcare</h3>
-          <p class="job__path">Agent <span aria-hidden="true">→</span> Administrative &amp; sales manager <span class="job__team">· team of up to 50</span></p>
+          <p>Agent <span aria-hidden="true">→</span> operations &amp; sales manager · team of up to 50</p>
         </div>
-        <ul class="dash">
-          <li>Set up employee accounts and platform access, and helped resolve login and application issues.</li>
-          <li>Onboarded and trained staff, wrote procedures, and coordinated problems across departments.</li>
-          <li>Tracked licenses, certifications and payroll details — sensitive records behind business-critical work.</li>
+        <ul class="list">
+          <li>Set up employee accounts and application access, and troubleshot login and platform problems.</li>
+          <li>Onboarded and trained staff, and wrote the procedures and documentation they worked from.</li>
+          <li>Ran tracking for licenses, certifications and payroll details; coordinated compliance requirements and process changes.</li>
         </ul>
       </div>
+
+      <p class="bridge">The two jobs meet in the same place: someone can’t log in, a record is wrong, a process breaks. At Prime I handled those as the person closest to the team; at eBuilt I handle them as the person who built the system.</p>
+
+      <dl class="skills">
+        <div><dt>Built</dt><dd>Web applications in JavaScript and React, role-based access, booking and admin workflows</dd></div>
+        <div><dt>Configured</dt><dd>Supabase and PostgreSQL, Google OAuth, Cloudflare domains, DNS and hosting, GitHub</dd></div>
+        <div><dt>Used &amp; supported</dt><dd>Google Workspace, Microsoft 365, RingCentral, Priority1, Sircon, insurance carrier platforms, QuickBooks, Square, Wix — as a user and helping colleagues with access, not administering their infrastructure</dd></div>
+        <div><dt>Learning</dt><dd>Enterprise systems administration — directory services, Windows and Linux servers, network infrastructure — which I haven’t administered yet</dd></div>
+      </dl>
     </div>
   </div>
 </section>
 
-<!-- E. About & contact -->
-<section class="section section--last" id="contact" aria-labelledby="contact-title">
-  <div class="wrap contact">
-    <div>
-      <h2 id="contact-title" class="section__title">About</h2>
-      <p class="contact__text">I came to software through operations: years of keeping a team’s accounts, tools and records working before I started building applications myself. Through eBuilt.app I now design and support systems for small businesses, working directly with the people who use them every day. I’m looking to bring that mix to a larger IT team and learn its standards and environment.</p>
+<!-- Troubleshooting -->
+<section class="section" id="troubleshooting" aria-labelledby="ts-title">
+  <div class="wrap section__grid">
+    <h2 id="ts-title" class="section__label">How I troubleshoot</h2>
+    <div class="section__body">
+      <ol class="steps">
+        <li>
+          <h3>Scope it</h3>
+          <p>Who is affected, since when, and what exactly do they see? One user and twenty users are different problems.</p>
+        </li>
+        <li>
+          <h3>Check the layers</h3>
+          <p>Connectivity, sign-in, permissions, recent changes, and whether the service itself is behaving — in roughly that order.</p>
+        </li>
+        <li>
+          <h3>Test one thing at a time</h3>
+          <p>Pick the most likely explanation, test it, and change one thing — with a way to undo it.</p>
+        </li>
+        <li>
+          <h3>Verify and write it down</h3>
+          <p>Confirm with the person who reported it, record the cause and fix, and escalate when it’s beyond my access or role.</p>
+        </li>
+      </ol>
+      <p class="note">This is how I work on the applications I build and support. In a larger IT team, I’d follow its own runbooks, change process and escalation paths.</p>
     </div>
-    <dl class="contact__facts">
-      <div><dt>Location</dt><dd>Orlando, Florida</dd></div>
-      <div><dt>Languages</dt><dd>English and Spanish, fluent</dd></div>
-      <div><dt>Email</dt><dd><a href="mailto:hello@irenemart.in">hello@irenemart.in</a></dd></div>
-      <div><dt>Profiles</dt><dd><a href="https://www.linkedin.com/in/irene-martin-a4ab85222" rel="noopener" target="_blank">LinkedIn<span class="sr-only"> (opens in new tab)</span> ↗</a> <a href="https://github.com/irenemartin1" rel="noopener" target="_blank">GitHub<span class="sr-only"> (opens in new tab)</span> ↗</a></dd></div>
-    </dl>
   </div>
-  <div class="wrap">
-    <p class="closing">Reliable technology starts with understanding the whole system.</p>
+</section>
+
+<!-- About & contact -->
+<section class="section section--last" id="contact" aria-labelledby="contact-title">
+  <div class="wrap section__grid">
+    <h2 id="contact-title" class="section__label">About</h2>
+    <div class="section__body">
+      <p class="about">I was born in Cuba and lived in Chile, where I studied two years of pre-med, before moving to Florida. I came to software through operations work, and I still think about technology from the side of the people who have to use it. I’m looking for a team where I can put what I’ve built to work and learn how a larger IT environment is run.</p>
+      <ul class="contact">
+        <li><a href="mailto:hello@irenemart.in">hello@irenemart.in</a></li>
+        <li><a href="https://www.linkedin.com/in/irene-martin-a4ab85222" rel="noopener" target="_blank">LinkedIn<span class="sr-only"> (opens in new tab)</span> ↗</a></li>
+        <li><a href="https://github.com/irenemartin1" rel="noopener" target="_blank">GitHub<span class="sr-only"> (opens in new tab)</span> ↗</a></li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -298,7 +243,7 @@
 
 <footer class="footer">
   <div class="wrap footer__inner">
-    <p>© <span data-year>2026</span> Irene Martin</p>
+    <p>© <span data-year>2026</span> Irene Martin · Orlando, Florida</p>
     <a href="#top">Back to top ↑</a>
   </div>
 </footer>
