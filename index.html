@@ -6,7 +6,7 @@
   <title>Irene Martin — IT Systems, Access &amp; Technical Operations</title>
   <meta name="description" content="Irene Martin, Orlando FL — IT systems, access and technical operations. Account provisioning, user support, DNS and networking, change control, and AI tool adoption.">
   <meta name="author" content="Irene Martin">
-  <meta name="theme-color" content="#f6f3ea">
+  <meta name="theme-color" content="#f7f1e5">
   <link rel="canonical" href="https://irenemart.in/">
 
   <meta property="og:type" content="website">
@@ -25,8 +25,9 @@
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/styles.css?v=8">
-  <script src="/assets/main.js?v=8" defer></script>
+  <link rel="preload" href="/assets/fonts/cormorant-garamond.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="/assets/styles.css?v=9">
+  <script src="/assets/main.js?v=9" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -49,8 +50,17 @@
 <!-- Hero -->
 <section class="hero" id="hero" aria-labelledby="hero-title">
   <div class="wrap hero__grid">
-    <div>
-      <p class="eyebrow">Candidate · IT Systems Administrator, Orange County Library System</p>
+    <figure class="bookplate">
+      <div class="bookplate__frame">
+        <img class="portrait" src="/assets/irene-480.jpg" srcset="/assets/irene-480.jpg 480w, /assets/irene-800.jpg 800w" sizes="(max-width: 700px) 112px, 210px" width="480" height="600" alt="Portrait of Irene Martin">
+      </div>
+      <figcaption>
+        <span class="bookplate__name">Irene Martin</span>
+        <span class="bookplate__meta">Orlando, Florida · English &amp; Spanish</span>
+      </figcaption>
+    </figure>
+    <div class="hero__text">
+      <p class="eyebrow">Applying for IT Systems Administrator · Orange County Library System</p>
       <h1 id="hero-title">IT systems, access <span class="amp">&amp;</span> technical operations.</h1>
       <p class="hero__lede">I build and support business applications and troubleshoot access and workflow issues. Before that, I set up accounts, trained staff and kept the tools working for a team of up to 80.</p>
       <p class="hero__actions">
@@ -58,13 +68,6 @@
         <a class="btn btn--outline" href="/assets/Irene-Martin-Resume.pdf" download>Download resume (PDF)</a>
         <a class="textlink" href="#work">See the work</a>
       </p>
-    </div>
-    <div class="id">
-      <img class="portrait" src="/assets/irene-480.jpg" srcset="/assets/irene-480.jpg 480w, /assets/irene-800.jpg 800w" sizes="(max-width: 700px) 96px, 140px" width="480" height="600" alt="Portrait of Irene Martin">
-      <div>
-        <p class="id__name">Irene Martin</p>
-        <p class="id__meta">Orlando, Florida<br>English &amp; Spanish</p>
-      </div>
     </div>
   </div>
   <div class="wrap">
@@ -80,9 +83,25 @@
 <!-- Why hire me -->
 <section class="section" id="why" aria-labelledby="why-title">
   <div class="wrap">
+    <p class="callno" aria-hidden="true">Call no. 004</p>
     <h2 id="why-title" class="title">Why hire me</h2>
-    <p class="intro">What the role needs, and where I’ve already done it.</p>
+    <p class="intro">How I think, what the role needs, and where I’ve already done it.</p>
 
+    <aside class="catalog" aria-labelledby="approach-title">
+      <div class="catalog__head">
+        <span>MARTIN, Irene</span>
+        <h3 id="approach-title">How I approach things</h3>
+      </div>
+      <dl class="catalog__body">
+        <div><dt>People first</dt><dd>I start with what the person is trying to get done, not just the error on their screen.</dd></div>
+        <div><dt>Calm &amp; methodical</dt><dd>Under pressure I slow down: scope it, test one thing, keep a way back.</dd></div>
+        <div><dt>Ownership</dt><dd>If I pick something up, I see it through — fixed, confirmed with the user, written down.</dd></div>
+        <div><dt>Always learning</dt><dd>I went from supporting systems to building them. I learn a new environment by working in it and asking good questions.</dd></div>
+        <div><dt>Leave it clearer</dt><dd>Clean permissions, clear docs, no mystery settings — so the next person isn’t starting from zero.</dd></div>
+      </dl>
+    </aside>
+
+    <h3 class="subtitle subtitle--tight">What the role needs</h3>
     <ol class="fit">
       <li>
         <h3>Accounts &amp; access</h3>
@@ -136,6 +155,7 @@
 <!-- Work + experience -->
 <section class="section section--tint" id="work" aria-labelledby="work-title">
   <div class="wrap">
+    <p class="callno" aria-hidden="true">Call no. 005</p>
     <h2 id="work-title" class="title">Work</h2>
 
     <div class="projects">
@@ -235,6 +255,7 @@
 <section class="contact" id="contact" aria-labelledby="contact-title">
   <div class="wrap contact__grid">
     <div>
+      <p class="callno" aria-hidden="true">Call no. 020</p>
       <h2 id="contact-title" class="title">Contact</h2>
       <p class="contact__note">Orlando, Florida · English &amp; Spanish</p>
     </div>
