@@ -105,6 +105,8 @@ a:hover { color: var(--plum); text-decoration-thickness: 2px; }
 .stats li + li { border-left: 1px solid var(--line); }
 .stats b { display: block; font: 600 clamp(28px, 3.4vw, 38px)/1 var(--serif); color: var(--plum); }
 .stats span { display: block; margin-top: 8px; font-size: 11px; color: var(--muted); letter-spacing: .04em; }
+.stats__link { display: inline-block; margin-top: 8px; font-size: 13px; font-weight: 500; color: var(--plum); }
+.stats__link span { display: inline; margin: 0; font-size: inherit; color: #c99a2e; letter-spacing: 0; }
 @media (max-width: 640px) {
   .stats { grid-template-columns: 1fr 1fr; }
   .stats li:nth-child(3) { border-left: 0; }
@@ -195,7 +197,8 @@ a:hover { color: var(--plum); text-decoration-thickness: 2px; }
 
 /* Phone-frame galleries */
 .gallery { min-width: 0; }
-.gallery__row { display: flex; justify-content: center; align-items: flex-start; padding: 8px 4px 4px; }
+.gallery__row { display: flex; justify-content: safe center; align-items: flex-start; padding: 8px 4px 12px; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: thin; }
+.phone { scroll-snap-align: start; }
 .phone { flex: none; width: 164px; margin: 0; position: relative; }
 .gallery__row { gap: 14px; }
 .phone + .phone { margin-left: 0; }
@@ -210,6 +213,7 @@ a:hover { color: var(--plum); text-decoration-thickness: 2px; }
 .phone figcaption { margin-top: 10px; padding: 0 6px; font-size: 12.5px; line-height: 1.4; color: var(--muted); text-align: center; }
 .phone--wide { width: 240px; }
 .gallery__hint { display: none; }
+.gallery:not(.is-static) .gallery__hint { display: block; margin-top: 4px; color: var(--plum-2); text-align: right; }
 @media (max-width: 900px) {
   .gallery { margin: 0 calc(-1 * clamp(22px, 3vw, 32px)); }
   .gallery__row { justify-content: flex-start; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px clamp(22px, 3vw, 32px) 12px; scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
@@ -217,6 +221,7 @@ a:hover { color: var(--plum); text-decoration-thickness: 2px; }
   .phone { width: 62vw; max-width: 220px; }
   .phone--wide { width: 78vw; max-width: 300px; }
   .gallery.is-static .gallery__hint { display: none; }
+.gallery:not(.is-static) .gallery__hint { display: block; margin-top: 4px; color: var(--plum-2); text-align: right; }
   .gallery__hint { display: block; padding: 0 clamp(22px, 3vw, 32px); color: var(--plum-2); }
 }
 
