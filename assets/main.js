@@ -49,14 +49,6 @@
     }).catch(function () {});
   }
 
-  /* Mobile: show a sticky Resume button once the hero has scrolled out of view */
-  var sticky = document.querySelector(".sticky-resume"), hero = document.getElementById("hero");
-  if (sticky && hero && "IntersectionObserver" in window) {
-    new IntersectionObserver(function (es) {
-      sticky.classList.toggle("is-visible", !es[0].isIntersecting);
-    }, { threshold: 0 }).observe(hero);
-  }
-
   /* In-page links: move keyboard focus to the target section */
   document.addEventListener("click", function (e) {
     var a = e.target.closest('a[href^="#"]');
