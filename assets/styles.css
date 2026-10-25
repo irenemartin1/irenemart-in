@@ -441,3 +441,5 @@ a:hover { color: var(--plum); text-decoration-thickness: 2px; }
 .rh8 { left: 32.52%; top: 10.88%; width: 8.76%; height: 1.45%; }
 .rh9 { left: 44.3%; top: 8.07%; width: 8.76%; height: 1.45%; }
 .rh10 { left: 27.16%; top: 4.55%; width: 16.28%; height: 1.64%; }
+.show-sm { display: none; }
+@media (max-width: 440px) { .show-sm { display: inline; } }
