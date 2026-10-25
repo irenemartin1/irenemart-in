@@ -25,8 +25,8 @@
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="/assets/styles.css?v=7">
-  <script src="/assets/main.js?v=7" defer></script>
+  <link rel="stylesheet" href="/assets/styles.css?v=8">
+  <script src="/assets/main.js?v=8" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -69,8 +69,8 @@
   </div>
   <div class="wrap">
     <ul class="stats" aria-label="At a glance">
-      <li><b>80</b><span>users supported</span></li>
-      <li><b>2</b><span>live platforms</span></li>
+      <li><b>34</b><span>platform users</span></li>
+      <li><b>80</b><span>staff supported</span></li>
       <li><b>4</b><span>role-based apps</span></li>
       <li><b>EN · ES</b><span>English &amp; Spanish</span></li>
     </ul>
@@ -98,7 +98,7 @@
       </li>
       <li>
         <h3>Documentation &amp; training</h3>
-        <p>Wrote procedures and trained staff. I explain technical steps clearly — in English and Spanish.</p>
+        <p>Wrote procedures and trained staff. Built an in-app help center with role-based guides and walkthroughs for a 34-user platform. I explain technical steps clearly — in English and Spanish.</p>
       </li>
       <li>
         <h3>Care with sensitive data</h3>
@@ -126,7 +126,7 @@
       <div><dt>Workstation &amp; User Support</dt><dd>Windows and macOS setup and troubleshooting, login/access/connectivity issues, user guidance, documentation</dd></div>
       <div><dt>Networking &amp; Infrastructure</dt><dd>Domain and DNS configuration, Cloudflare, router and Wi-Fi configuration, working knowledge of TCP/IP and DHCP</dd></div>
       <div><dt>Change Control &amp; Deployment</dt><dd>Git, GitHub, version-controlled releases, rollback, release verification, Supabase, PostgreSQL</dd></div>
-      <div><dt>Scripting &amp; Integration</dt><dd>JavaScript, React, APIs, webhooks, workflow automation</dd></div>
+      <div><dt>Scripting &amp; Integration</dt><dd>JavaScript, React, APIs, webhooks, Square integration, workflow automation</dd></div>
       <div><dt>AI Tools &amp; Adoption</dt><dd>Claude, ChatGPT, Gemini, Codex; building AI-powered tools, training users on AI tools</dd></div>
       <div><dt>Business Platforms</dt><dd>Google Workspace, Microsoft 365, RingCentral, Priority1 TMS, Sircon, CMS insurance platforms, carrier portals, QuickBooks, LeadConnector CRM</dd></div>
     </dl>
@@ -140,35 +140,74 @@
 
     <div class="projects">
       <article class="project" aria-labelledby="mdsky-title">
-        <figure class="shot" data-shot>
-          <img src="/assets/mdsky-screenshot.png" width="1600" height="1000" loading="lazy" alt="M.D. Sky OS dispatcher dashboard">
-          <figcaption class="shot__placeholder" aria-hidden="true">M.D. Sky OS · screenshot</figcaption>
+        <div class="project__text">
+          <p class="status"><span aria-hidden="true"></span>Live platform</p>
+          <h3 id="mdsky-title">M.D. Sky OS</h3>
+          <p class="project__sub">Multi-role logistics operations platform</p>
+          <ul class="ticks">
+            <li>Supports 34 users in daily operations</li>
+            <li>Four role-based apps (owner, dispatcher, driver, customer) on shared shipment records</li>
+            <li>Google OAuth and database policies limiting data by role and ownership</li>
+            <li>In-app support center: role-based help articles and guided walkthroughs for admins, dispatchers, drivers, and customers</li>
+            <li>Permission testing per role, Git-tracked releases, Cloudflare deploy with custom DNS</li>
+          </ul>
+          <p class="project__foot"><a class="btn" href="https://mdskyos.com/" rel="noopener" target="_blank">Visit mdskyos.com<span class="sr-only"> (opens in new tab)</span> ↗</a><span>React · Supabase · PostgreSQL · Cloudflare</span></p>
+        </div>
+      <div class="gallery" aria-label="M.D. Sky OS screenshots">
+        <div class="gallery__row">
+        <figure class="phone">
+          <button class="phone__btn" type="button" data-full="/assets/shots/mdsky-howto-full.webp" data-alt="M.D. Sky OS how-to library listing step-by-step walkthroughs for routes and communication" aria-label="Enlarge screenshot: Guided walkthroughs for real tasks">
+            <picture><source type="image/webp" srcset="/assets/shots/mdsky-howto.webp"><img src="/assets/shots/mdsky-howto.png" width="391" height="800" loading="lazy" decoding="async" alt="M.D. Sky OS how-to library listing step-by-step walkthroughs for routes and communication"></picture>
+          </button>
+          <figcaption>Guided walkthroughs for real tasks</figcaption>
         </figure>
-        <p class="status"><span aria-hidden="true"></span>Live platform</p>
-        <h3 id="mdsky-title">M.D. Sky OS</h3>
-        <p class="project__sub">Multi-role logistics operations platform</p>
-        <ul class="ticks">
-          <li>Four role-based apps — owner, dispatcher, driver, customer — on shared shipment records</li>
-          <li>Google OAuth and database policies limiting data by role and ownership</li>
-          <li>Permission testing per role, Git-tracked releases, Cloudflare deploy with custom DNS</li>
-        </ul>
-        <p class="project__foot"><a class="btn btn--small" href="https://mdskyos.com/" rel="noopener" target="_blank">Visit mdskyos.com<span class="sr-only"> (opens in new tab)</span> ↗</a><span>React · Supabase · PostgreSQL</span></p>
+        <figure class="phone">
+          <button class="phone__btn" type="button" data-full="/assets/shots/mdsky-qa-full.webp" data-alt="M.D. Sky OS questions and answers grouped by role: company admin and owner, customers, dispatchers and drivers" aria-label="Enlarge screenshot: Help articles organized by user role">
+            <picture><source type="image/webp" srcset="/assets/shots/mdsky-qa.webp"><img src="/assets/shots/mdsky-qa.png" width="405" height="800" loading="lazy" decoding="async" alt="M.D. Sky OS questions and answers grouped by role: company admin and owner, customers, dispatchers and drivers"></picture>
+          </button>
+          <figcaption>Help articles organized by user role</figcaption>
+        </figure>
+        <figure class="phone">
+          <button class="phone__btn" type="button" data-full="/assets/shots/mdsky-menu-full.webp" data-alt="M.D. Sky OS navigation menu with command center, routes, drivers, customers, issues, schedule, analytics, reports, team and support center" aria-label="Enlarge screenshot: Full operations system: routes, drivers, issues, reports, team">
+            <picture><source type="image/webp" srcset="/assets/shots/mdsky-menu.webp"><img src="/assets/shots/mdsky-menu.png" width="393" height="800" loading="lazy" decoding="async" alt="M.D. Sky OS navigation menu with command center, routes, drivers, customers, issues, schedule, analytics, reports, team and support center"></picture>
+          </button>
+          <figcaption>Full operations system: routes, drivers, issues, reports, team</figcaption>
+        </figure>
+        </div>
+        <p class="gallery__hint" aria-hidden="true">Swipe for more →</p>
+      </div>
       </article>
 
       <article class="project" aria-labelledby="pawtner-title">
-        <figure class="shot" data-shot>
-          <img src="/assets/pawtner-screenshot.png" width="1600" height="1000" loading="lazy" alt="My Sweet Pawtner admin portal">
-          <figcaption class="shot__placeholder" aria-hidden="true">My Sweet Pawtner · screenshot</figcaption>
+        <div class="project__text">
+          <p class="status"><span aria-hidden="true"></span>Live</p>
+          <h3 id="pawtner-title">My Sweet Pawtner</h3>
+          <p class="project__sub">Booking website and admin portal</p>
+          <ul class="ticks">
+            <li>Customer booking site with a database-backed admin portal</li>
+            <li>Live Square integration for appointments</li>
+            <li>Admin views for bookings, clients and pets, service zones, and terms</li>
+            <li>Tested end to end, from customer submission to admin review</li>
+          </ul>
+          <p class="project__foot"><a class="btn" href="https://mysweetpawtner.com/" rel="noopener" target="_blank">Visit mysweetpawtner.com<span class="sr-only"> (opens in new tab)</span> ↗</a></p>
+        </div>
+      <div class="gallery" aria-label="My Sweet Pawtner screenshots">
+        <div class="gallery__row">
+        <figure class="phone phone--wide">
+          <button class="phone__btn" type="button" data-full="/assets/shots/pawtner-dashboard-full.webp" data-alt="My Sweet Pawtner admin dashboard showing needs-attention counts and a Square connected status" aria-label="Enlarge screenshot: Admin dashboard with live Square integration">
+            <picture><source type="image/webp" srcset="/assets/shots/pawtner-dashboard.webp"><img src="/assets/shots/pawtner-dashboard.png" width="697" height="800" loading="lazy" decoding="async" alt="My Sweet Pawtner admin dashboard showing needs-attention counts and a Square connected status"></picture>
+          </button>
+          <figcaption>Admin dashboard with live Square integration</figcaption>
         </figure>
-        <p class="status"><span aria-hidden="true"></span>Live</p>
-        <h3 id="pawtner-title">My Sweet Pawtner</h3>
-        <p class="project__sub">Booking website and admin portal</p>
-        <ul class="ticks">
-          <li>Customers book service, schedule, and pickup &amp; drop-off details</li>
-          <li>Each booking stored in the database and managed from an admin portal</li>
-          <li>Tested end to end, from submission to admin review</li>
-        </ul>
-        <p class="project__foot"><a class="btn btn--small" href="https://mysweetpawtner.com/" rel="noopener" target="_blank">Visit mysweetpawtner.com<span class="sr-only"> (opens in new tab)</span> ↗</a></p>
+        <figure class="phone">
+          <button class="phone__btn" type="button" data-full="/assets/shots/pawtner-sidebar-full.webp" data-alt="My Sweet Pawtner admin sidebar with dashboard, bookings, clients and pets, zones and terms, and Square appointments" aria-label="Enlarge screenshot: Admin portal: bookings, clients, zones, appointments">
+            <picture><source type="image/webp" srcset="/assets/shots/pawtner-sidebar.webp"><img src="/assets/shots/pawtner-sidebar.png" width="393" height="800" loading="lazy" decoding="async" alt="My Sweet Pawtner admin sidebar with dashboard, bookings, clients and pets, zones and terms, and Square appointments"></picture>
+          </button>
+          <figcaption>Admin portal: bookings, clients, zones, appointments</figcaption>
+        </figure>
+        </div>
+        <p class="gallery__hint" aria-hidden="true">Swipe for more →</p>
+      </div>
       </article>
     </div>
 
@@ -178,7 +217,7 @@
         <p class="timeline__date">May 2025 – Present</p>
         <div>
           <p class="timeline__role"><b>Founder</b>, eBuilt.app</p>
-          <p>Build, deploy and support business applications; configure authentication, permissions, databases, DNS and integrations; fix bugs and access issues with clients; and build AI-assisted tools and automations.</p>
+          <p>Build, deploy and support business applications, including a 34-user logistics platform; configure authentication, permissions, databases, DNS and integrations; build AI-assisted tools and automations; fix bugs and access issues with clients.</p>
         </div>
       </li>
       <li>
@@ -209,6 +248,11 @@
     <a href="#top">Back to top ↑</a>
   </div>
 </section>
+
+<dialog class="lightbox" id="lightbox" aria-label="Screenshot preview">
+  <button class="lightbox__close" type="button" aria-label="Close preview">×</button>
+  <img class="lightbox__img" src="" alt="">
+</dialog>
 
 </main>
 </body>
