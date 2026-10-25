@@ -61,10 +61,11 @@ a:hover { color: var(--plum); text-decoration-thickness: 2px; }
 /* Bookplate portrait: arched frame with a double rule */
 .bookplate { text-align: center; }
 .bookplate__frame { padding: 8px; border: 1px solid var(--plum); border-radius: 120px 120px 6px 6px; background: var(--paper); box-shadow: 0 0 0 4px var(--cream), 0 0 0 5px var(--line); }
-.portrait { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 22%; border-radius: 112px 112px 3px 3px; }
-.bookplate figcaption { margin-top: 16px; display: grid; gap: 2px; }
-.bookplate__name { font: 500 24px/1.1 var(--serif); color: var(--plum); }
-.bookplate__meta { font-size: 13px; color: var(--muted); }
+.portrait { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 35%; border-radius: 112px 112px 3px 3px; }
+.bookplate figcaption { margin-top: 18px; display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.bookplate__name { font: 500 25px/1.1 var(--serif); color: var(--plum); letter-spacing: .01em; }
+.bookplate__rule { width: 36px; height: 1px; margin: 7px 0 5px; background: var(--plum-2); }
+.bookplate__meta { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
 
 .eyebrow { color: var(--plum); display: inline-block; padding-bottom: 6px; border-bottom: 1px solid var(--lilac); }
 .hero h1 { margin-top: 18px; font: 500 clamp(42px, 5.6vw, 68px)/1 var(--serif); letter-spacing: -.01em; color: var(--ink); max-width: 16ch; }
@@ -84,7 +85,7 @@ a:hover { color: var(--plum); text-decoration-thickness: 2px; }
   .bookplate { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 18px; align-items: center; text-align: left; }
   .bookplate__frame { padding: 5px; border-radius: 60px 60px 4px 4px; }
   .portrait { border-radius: 56px 56px 2px 2px; }
-  .bookplate figcaption { margin-top: 0; }
+  .bookplate figcaption { margin-top: 0; align-items: flex-start; }
 }
 
 /* Stat strip */
