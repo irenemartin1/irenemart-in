@@ -137,18 +137,26 @@ a:hover { color: var(--plum); text-decoration-thickness: 2px; }
   .fit tbody tr + tr { border-top: 1px solid var(--line); }
 }
 
-/* Troubleshooting procedure */
+/* How I work an issue */
 .method { margin-top: 40px; }
-.method__note { margin-top: 10px; font-size: 14.5px; color: var(--muted); }
 .method__steps { margin-top: 14px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); counter-reset: m; border: 1px solid var(--line); border-radius: 4px; background: var(--paper); }
-.method__steps li { counter-increment: m; position: relative; padding: 14px 16px; font-size: 14.5px; font-weight: 500; line-height: 1.35; }
+.method__steps li { counter-increment: m; position: relative; padding: 16px 16px 18px; }
 .method__steps li + li { border-left: 1px solid var(--line); }
-.method__steps li::before { content: "Step " counter(m); display: block; margin-bottom: 6px; font: 500 11px/1 var(--mono); color: var(--plum-2); text-transform: uppercase; letter-spacing: .06em; }
-@media (max-width: 760px) {
+.method__steps li::before { content: "Step " counter(m); display: block; margin-bottom: 8px; font: 500 11px/1 var(--mono); color: var(--plum-2); text-transform: uppercase; letter-spacing: .06em; }
+.method__steps li:not(:last-child)::after { content: "→"; position: absolute; top: 13px; right: 12px; font: 500 13px/1 var(--mono); color: var(--line); }
+.method__steps b { display: block; font: 600 17px/1.25 var(--serif); color: var(--ink); }
+.method__steps span { display: block; margin-top: 6px; font-size: 14px; line-height: 1.5; color: var(--ink-2); }
+@media (max-width: 900px) {
   .method__steps { grid-template-columns: 1fr; }
-  .method__steps li { display: flex; align-items: baseline; gap: 14px; padding: 10px 14px; }
+  .method__steps li { display: grid; grid-template-columns: 58px 150px minmax(0, 1fr); gap: 4px 14px; align-items: baseline; padding: 12px 16px; }
   .method__steps li + li { border-left: 0; border-top: 1px solid var(--line); }
-  .method__steps li::before { margin: 0; flex: none; width: 52px; }
+  .method__steps li::before { margin: 0; }
+  .method__steps li::after { display: none; }
+  .method__steps span { margin-top: 0; }
+}
+@media (max-width: 560px) {
+  .method__steps li { grid-template-columns: 52px minmax(0, 1fr); }
+  .method__steps span { grid-column: 2; }
 }
 
 /* Skills index */
