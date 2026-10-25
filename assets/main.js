@@ -85,20 +85,24 @@
     setTimeout(function () { t.focus({ preventScroll: true }); }, reduceMotion ? 0 : 400);
   });
 
-  /* Mark the section currently in view in the nav */
-  if (!("IntersectionObserver" in window)) return;
-  var links = Array.prototype.slice.call(document.querySelectorAll(".nav a"));
-  var spy = new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) {
-      if (!en.isIntersecting) return;
-      links.forEach(function (l) {
-        if (l.getAttribute("href") === "#" + en.target.id) l.setAttribute("aria-current", "true");
-        else l.removeAttribute("aria-current");
-      });
+  /* Mark the section currently in view in the nav (exactly one at a time) */
+  var links = Array.prototype.slice.call(document.querySelectorAll(".nav a[href^='#']"));
+  var sections = ["hero", "skills", "work", "contact"].map(function (id) { return document.getElementById(id); }).filter(Boolean);
+  var setCurrent = function () {
+    var line = window.innerHeight * 0.4, cur = null;
+    sections.forEach(function (s) { if (s.getBoundingClientRect().top <= line) cur = s.id; });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = "contact";
+    links.forEach(function (l) {
+      if (l.getAttribute("href") === "#" + cur) l.setAttribute("aria-current", "true");
+      else l.removeAttribute("aria-current");
     });
-  }, { rootMargin: "-45% 0px -50% 0px" });
-  ["hero", "skills", "work", "contact"].forEach(function (id) {
-    var s = document.getElementById(id);
-    if (s) spy.observe(s);
-  });
+  };
+  var ticking = false;
+  window.addEventListener("scroll", function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { ticking = false; setCurrent(); });
+  }, { passive: true });
+  window.addEventListener("resize", setCurrent);
+  setCurrent();
 })();

@@ -60,7 +60,10 @@ a:hover { color: var(--plum); text-decoration-thickness: 2px; }
 .nav { display: flex; gap: 26px; }
 .nav a { font-size: 14.5px; color: var(--ink-2); text-decoration: none; padding: 6px 0; }
 .nav { align-items: center; }
-.nav a:hover, .nav a[aria-current="true"] { color: var(--plum); box-shadow: inset 0 -2px 0 var(--plum); }
+.nav a[aria-current="true"] { color: var(--plum); box-shadow: inset 0 -2px 0 var(--plum); }
+@media (hover: hover) { .nav a:hover { color: var(--plum); } }
+.nav a:focus { outline: none; }
+.nav a:focus-visible { outline: 2px solid var(--plum-2); outline-offset: 3px; }
 @media (max-width: 640px) {
   .topbar__inner { flex-direction: column; align-items: stretch; height: auto; padding-top: 10px; gap: 4px; }
   .brand { gap: 8px; }
@@ -410,3 +413,11 @@ a:hover { color: var(--plum); text-decoration-thickness: 2px; }
   .steps--deep li::before { grid-row: span 2; margin-top: 4px; }
   .steps--deep b { margin-bottom: 4px; }
 }
+/* v28: lightbox close button sits above the image, never on it */
+.lightbox { max-height: none; }
+.lightbox__img { margin-top: 54px; max-height: calc(100vh - 90px); max-height: calc(100dvh - 90px); }
+.lightbox__close, .lightbox__close { top: 0; right: 0; }
+@media (max-width: 600px) { .lightbox__close { top: 0; right: 0; } }
+.notfound { padding: 80px 0 100px; }
+.notfound p { margin-top: 12px; color: var(--ink-2); }
+.notfound .btn { margin-top: 22px; }
