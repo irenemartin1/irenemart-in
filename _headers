@@ -18,3 +18,10 @@
 /resume/Irene-Martin-Resume-r6.pdf
   Content-Type: application/pdf
   Content-Disposition: inline; filename="Irene-Martin-Resume.pdf"
+
+/demos/*
+  ! Content-Security-Policy
+  ! X-Frame-Options
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'none'
+  X-Frame-Options: SAMEORIGIN
+  X-Robots-Tag: noindex, nofollow

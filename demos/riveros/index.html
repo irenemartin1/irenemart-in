@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Riveros Insurance Group — Agency Platform Demo</title>
+<meta name="description" content="Interactive demo: website, CRM, agent licensing, commissions, automations, AI assistant and client portal for an insurance agency. Built by eBuilt.">
+<meta property="og:title" content="Riveros Insurance Group — Agency Platform Demo">
+<meta property="og:description" content="Website, CRM, agents & licensing, commissions, automations, AI and client portal — all in one place. Built by eBuilt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0f2547; --navy2:#16345f; --ink:#0f172a; --muted:#64748b; --line:#e5e9f0;
+  --bg:#f4f6fa; --card:#fff; --accent:#0ea5a4; --accent2:#e6f7f7; --gold:#f59e0b;
+  --red:#e11d48; --redbg:#fde8ee; --green:#16a34a; --greenbg:#e7f6ec; --amber:#b45309; --amberbg:#fef3e2;
+  --blue:#2563eb; --bluebg:#e8efff; --r:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.45}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input,select,textarea{font:inherit;color:inherit}
+.app{display:flex;min-height:100vh}
+/* sidebar */
+.side{width:236px;background:var(--navy);color:#cdd6e4;display:flex;flex-direction:column;position:fixed;inset:0 auto 0 0;z-index:20}
+.brand{display:flex;gap:10px;align-items:center;padding:20px 18px 18px;color:#fff}
+.logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#38bdf8);display:grid;place-items:center;font-weight:800;color:#fff;font-size:15px}
+.brand b{display:block;font-size:14px;line-height:1.1}.brand small{font-size:11px;color:#8fa3c0}
+.nav{padding:6px 10px;flex:1;overflow:auto}
+.nav .sec{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#6f86a8;padding:14px 10px 6px}
+.nav a{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:9px;color:#cdd6e4;text-decoration:none;font-weight:500;margin-bottom:2px}
+.nav a:hover{background:rgba(255,255,255,.06)}
+.nav a.on{background:rgba(14,165,164,.18);color:#fff}
+.nav a svg{width:18px;height:18px;flex:none;opacity:.9}
+.nav .pill{margin-left:auto;background:var(--accent);color:#fff;font-size:11px;border-radius:20px;padding:1px 7px;font-weight:700}
+.sidefoot{padding:14px 18px;border-top:1px solid rgba(255,255,255,.08);font-size:11.5px;color:#8fa3c0}
+.sidefoot b{color:#fff}
+/* main */
+.main{margin-left:236px;flex:1;min-width:0}
+.top{display:flex;align-items:center;gap:12px;padding:16px 28px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.top h1{font-size:19px;font-weight:700}
+.top .sub{color:var(--muted);font-size:12.5px}
+.top .sp{flex:1}
+.search{display:flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:7px 11px;width:260px;color:var(--muted)}
+.search input{border:0;background:none;outline:none;width:100%}
+.avatar{width:34px;height:34px;border-radius:50%;background:#fde68a;display:grid;place-items:center;font-weight:700;color:#92400e;font-size:13px;flex:none}
+.wrap{padding:24px 28px 90px}
+.demo-banner{background:linear-gradient(90deg,var(--navy2),var(--navy));color:#dbe6f5;border-radius:var(--r);padding:12px 16px;display:flex;gap:10px;align-items:center;margin-bottom:20px;font-size:13px}
+.demo-banner b{color:#fff}
+.demo-banner .tag{background:var(--gold);color:#3b2600;font-weight:700;font-size:11px;border-radius:6px;padding:2px 7px;flex:none}
+/* cards */
+.grid{display:grid;gap:16px}
+.k4{grid-template-columns:repeat(4,1fr)}
+.c2{grid-template-columns:1.6fr 1fr}
+.c2e{grid-template-columns:1fr 1fr}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.card h3{font-size:14.5px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.card h3 .sp{flex:1}
+.kpi .lbl{color:var(--muted);font-size:12.5px;font-weight:500}
+.kpi .val{font-size:26px;font-weight:800;margin:4px 0 2px;letter-spacing:-.02em}
+.kpi .d{font-size:12px;font-weight:600}
+.up{color:var(--green)}.dn{color:var(--red)}
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:600;border-radius:20px;padding:2px 9px;white-space:nowrap}
+.b-green{background:var(--greenbg);color:var(--green)}.b-red{background:var(--redbg);color:var(--red)}
+.b-amber{background:var(--amberbg);color:var(--amber)}.b-blue{background:var(--bluebg);color:var(--blue)}
+.b-gray{background:#eef1f5;color:#475569}.b-teal{background:var(--accent2);color:#0b7f7e}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:10px;font-weight:600;font-size:13px;border:1px solid var(--line);background:#fff}
+.btn:hover{border-color:#cbd5e1}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.pri:hover{background:#0c8f8e}
+.btn.sm{padding:5px 10px;font-size:12px;border-radius:8px}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600;padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:11px 10px;border-bottom:1px solid #f0f2f6;vertical-align:middle}
+tr:last-child td{border-bottom:0}
+tbody tr:hover{background:#fafbfd}
+.tbl{overflow-x:auto}
+.who{display:flex;align-items:center;gap:10px}
+.ini{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:11.5px;font-weight:700;flex:none}
+.muted{color:var(--muted)}.sm{font-size:12px}
+.row{display:flex;align-items:center;gap:10px}
+.bars{display:flex;align-items:flex-end;gap:10px;flex:1;min-height:170px;padding-top:10px}
+.bars .b{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end}
+.bars .b i{display:block;width:100%;border-radius:6px 6px 2px 2px;background:linear-gradient(180deg,#2dd4bf,var(--accent))}
+.bars .b.cur i{background:linear-gradient(180deg,#60a5fa,var(--blue))}
+.bars .b span{font-size:11px;color:var(--muted)}
+.bars .b em{font-style:normal;font-size:11px;font-weight:700}
+.list .it{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid #f0f2f6;align-items:flex-start}
+.list .it:last-child{border-bottom:0}
+.dot{width:8px;height:8px;border-radius:50%;margin-top:6px;flex:none}
+.chk{width:18px;height:18px;border:2px solid #cbd5e1;border-radius:5px;flex:none;margin-top:1px;display:grid;place-items:center}
+.chk.done{background:var(--accent);border-color:var(--accent)}
+.chk.done::after{content:"";width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.it.done .t{text-decoration:line-through;color:var(--muted)}
+.prog{height:7px;background:#eef1f5;border-radius:9px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--accent);border-radius:9px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+.chip{padding:6px 12px;border-radius:20px;border:1px solid var(--line);background:#fff;font-weight:600;font-size:12.5px}
+.chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* kanban */
+.kan{display:grid;grid-template-columns:repeat(5,minmax(220px,1fr));gap:12px;overflow-x:auto;padding-bottom:6px}
+.col{background:#eceff5;border-radius:var(--r);padding:10px;min-height:300px}
+.col h4{font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:6px;padding:2px 4px 10px}
+.col h4 .n{background:#fff;border-radius:20px;padding:0 8px;font-size:11.5px;color:var(--muted)}
+.col h4 .sum{margin-left:auto;color:var(--muted);font-weight:600;font-size:11.5px}
+.lead{background:#fff;border-radius:11px;padding:11px;margin-bottom:9px;border:1px solid var(--line);cursor:pointer;transition:.15s}
+.lead:hover{box-shadow:0 4px 14px rgba(15,37,71,.08);transform:translateY(-1px)}
+.lead .nm{font-weight:700;font-size:13.5px}
+.lead .meta{display:flex;gap:6px;flex-wrap:wrap;margin:7px 0}
+.lead .ft{display:flex;align-items:center;justify-content:space-between;font-size:11.5px;color:var(--muted)}
+.lead.new{animation:pop .8s ease}
+@keyframes pop{0%{box-shadow:0 0 0 0 rgba(14,165,164,.6)}100%{box-shadow:0 0 0 14px rgba(14,165,164,0)}}
+/* drawer */
+.ov{position:fixed;inset:0;background:rgba(15,23,42,.38);z-index:50;display:none}
+.ov.on{display:block}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:440px;max-width:100%;background:#fff;z-index:51;transform:translateX(100%);transition:.25s;display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.dh{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:center}
+.dh .x{margin-left:auto;font-size:22px;color:var(--muted);width:32px;height:32px;border-radius:8px}
+.dh .x:hover{background:var(--bg)}
+.db{padding:18px 20px;overflow:auto;flex:1}
+.kv{display:grid;grid-template-columns:120px 1fr;gap:8px 12px;font-size:13px;margin-bottom:16px}
+.kv dt{color:var(--muted)}
+.tl{border-left:2px solid var(--line);margin-left:6px;padding-left:16px}
+.tl .e{position:relative;padding-bottom:14px}
+.tl .e::before{content:"";position:absolute;left:-22px;top:4px;width:10px;height:10px;border-radius:50%;background:#fff;border:2px solid var(--accent)}
+.tl .e b{font-size:13px}.tl .e p{font-size:12px;color:var(--muted)}
+.tpl{background:var(--bg);border-radius:10px;padding:12px;font-size:13px;margin:8px 0 10px;border:1px dashed #cbd5e1}
+.modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-48%) scale(.98);opacity:0;pointer-events:none;width:520px;max-width:calc(100% - 24px);max-height:calc(100% - 40px);overflow:auto;background:#fff;border-radius:18px;z-index:52;transition:.2s;padding:22px}
+.modal.on{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}
+.fld{margin-bottom:12px}
+.fld label{display:block;font-size:12px;font-weight:600;color:#334155;margin-bottom:5px}
+.fld input,.fld select,.fld textarea{width:100%;border:1px solid #d6dce5;border-radius:10px;padding:9px 11px;outline:none;background:#fff}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(14,165,164,.15)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+/* toggle */
+.tg{width:40px;height:23px;border-radius:20px;background:#cbd5e1;position:relative;flex:none;transition:.2s}
+.tg::after{content:"";position:absolute;top:3px;left:3px;width:17px;height:17px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.tg.on{background:var(--accent)}.tg.on::after{left:20px}
+.auto{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid #f0f2f6}
+.auto:last-child{border-bottom:0}
+.auto .ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;flex:none;font-size:18px}
+.flow{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px;align-items:center}
+.flow span{background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:2px 8px;font-size:11.5px;font-weight:500}
+.flow em{color:var(--muted);font-style:normal;font-size:11px}
+/* site preview */
+.browser{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:0 10px 30px rgba(15,37,71,.07)}
+.bbar{background:#eef1f5;padding:9px 12px;display:flex;align-items:center;gap:7px}
+.bbar i{width:10px;height:10px;border-radius:50%;background:#f87171;display:block}
+.bbar i:nth-child(2){background:#fbbf24}.bbar i:nth-child(3){background:#34d399}
+.bbar .url{margin-left:10px;background:#fff;border-radius:7px;padding:4px 12px;font-size:12px;color:var(--muted);flex:1;max-width:380px}
+.hero{background:radial-gradient(circle at 85% 20%,rgba(56,189,248,.35),transparent 45%),linear-gradient(135deg,var(--navy),#123f6e);color:#fff;padding:44px 40px;display:grid;grid-template-columns:1.15fr 1fr;gap:30px;align-items:center}
+.hero h2{font-size:34px;line-height:1.1;font-weight:800;letter-spacing:-.02em}
+.hero h2 span{color:#5eead4}
+.hero p{color:#c4d3e8;margin:14px 0 18px;font-size:15px}
+.hero .trust{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:#a9bdd8}
+.qform{background:#fff;color:var(--ink);border-radius:16px;padding:20px;box-shadow:0 20px 40px rgba(0,0,0,.25)}
+.qform h4{font-size:16px;margin-bottom:12px}
+.lines{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding:28px 40px}
+.line{border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+.line .e{font-size:26px}.line b{display:block;margin-top:6px;font-size:13.5px}.line small{color:var(--muted);font-size:11.5px}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:0 40px 32px}
+.why div{background:var(--bg);border-radius:14px;padding:16px}
+.why b{display:block;margin-bottom:4px}
+.wa{position:absolute;right:18px;bottom:18px;background:#25d366;color:#fff;width:50px;height:50px;border-radius:50%;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.2);font-size:22px}
+/* chat */
+.chat{display:flex;flex-direction:column;height:calc(100vh - 230px);min-height:420px}
+.msgs{flex:1;overflow:auto;padding:4px 2px 10px;display:flex;flex-direction:column;gap:10px}
+.m{max-width:80%;padding:10px 13px;border-radius:14px;font-size:13.5px;white-space:pre-line}
+.m.u{align-self:flex-end;background:var(--navy);color:#fff;border-bottom-right-radius:4px}
+.m.a{align-self:flex-start;background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px}
+.m.a table{margin-top:8px;font-size:12.5px}.m.a td,.m.a th{padding:5px 8px}
+.sugg{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0}
+.sugg button{background:#fff;border:1px solid var(--line);border-radius:20px;padding:6px 11px;font-size:12.5px;font-weight:500}
+.sugg button:hover{border-color:var(--accent);color:#0b7f7e}
+.cin{display:flex;gap:8px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px}
+.cin input{flex:1;border:0;outline:none;padding:4px 8px}
+/* portal */
+.phone{width:340px;max-width:100%;margin:0 auto;background:#0b1220;border-radius:42px;padding:12px;box-shadow:0 24px 50px rgba(15,37,71,.25)}
+.screen{background:var(--bg);border-radius:32px;overflow:hidden;height:660px;display:flex;flex-direction:column}
+.ph-top{background:linear-gradient(135deg,var(--navy),#155e75);color:#fff;padding:26px 18px 18px}
+.ph-top small{color:#a9c4dd}
+.ph-body{padding:14px;overflow:auto;flex:1}
+.pol{background:#fff;border-radius:14px;padding:13px;margin-bottom:10px;border:1px solid var(--line)}
+.idc{background:linear-gradient(135deg,#0ea5a4,#2563eb);color:#fff;border-radius:14px;padding:14px;margin-bottom:12px}
+.idc small{opacity:.8}
+.qa{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+.qa div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px 4px;text-align:center;font-size:10.5px;font-weight:600}
+.qa div span{display:block;font-size:18px;margin-bottom:2px}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,30px);opacity:0;background:var(--ink);color:#fff;padding:12px 16px;border-radius:12px;z-index:80;transition:.3s;font-size:13px;max-width:calc(100% - 30px);box-shadow:0 10px 30px rgba(0,0,0,.25);display:flex;gap:10px;align-items:center}
+.toast .btn{color:var(--ink);flex:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.view{display:none}.view.on{display:block}
+.mobnav{display:none}
+.pricebox{border:2px solid var(--accent);border-radius:16px;padding:18px;background:linear-gradient(180deg,#f0fbfb,#fff)}
+/* responsive */
+@media (max-width:1100px){.k4{grid-template-columns:repeat(2,1fr)}.c2,.c2e{grid-template-columns:1fr}.lines{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:820px){
+  .side{display:none}.main{margin-left:0}
+  .top{padding:12px 16px}.search{display:none}.top h1{font-size:17px}
+  .wrap{padding:16px 14px 100px}
+  .hero{grid-template-columns:1fr;padding:28px 20px}.hero h2{font-size:26px}
+  .lines{grid-template-columns:repeat(2,1fr);padding:20px}.why{grid-template-columns:1fr;padding:0 20px 24px}
+  .kan{grid-template-columns:repeat(5,82%);scroll-snap-type:x mandatory}.col{scroll-snap-align:start}
+  .mobnav{display:flex;position:fixed;bottom:0;left:0;right:0;background:var(--navy);z-index:30;overflow-x:auto;padding:6px 6px calc(6px + env(safe-area-inset-bottom))}
+  .mobnav a{flex:none;color:#a9bdd8;text-decoration:none;font-size:10.5px;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 10px;border-radius:10px;min-width:64px}
+  .mobnav a.on{background:rgba(14,165,164,.22);color:#fff}
+  .mobnav svg{width:20px;height:20px}
+  .kv{grid-template-columns:100px 1fr}
+  .hide-m{display:none}
+}
+@media (max-width:520px){.k4{grid-template-columns:1fr 1fr;gap:10px}.kpi .val{font-size:21px}.card{padding:14px}.f2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand"><div class="logo">RI</div><div><b>Riveros Insurance</b><small>Agency platform</small></div></div>
+    <nav class="nav" id="nav"></nav>
+    <div class="sidefoot">Demo built by <b>eBuilt</b><br>Irene Martin · hello@irenemart.in</div>
+  </aside>
+  <main class="main">
+    <div class="top">
+      <div><h1 id="ttl">Home</h1><div class="sub" id="sttl"></div></div>
+      <div class="sp"></div>
+      <div class="search">🔍<input id="gsearch" placeholder="Search client, policy, agent…"></div>
+      <div class="avatar" title="Jenny Riveros · Owner">JR</div>
+    </div>
+    <div class="wrap">
+      <div class="demo-banner"><span class="tag">DEMO</span><div>This is an <b>interactive demo with sample data</b>. Try the quote form on the Website tab — the lead shows up in the CRM instantly.</div></div>
+
+      <!-- HOME -->
+      <section class="view" id="v-home">
+        <div class="grid k4" id="kpis"></div>
+        <div class="grid c2" style="margin-top:16px">
+          <div class="card" style="display:flex;flex-direction:column"><h3>New policies per month <span class="sp"></span><span class="badge b-teal">2026</span></h3><div class="bars" id="bars"></div></div>
+          <div class="card"><h3>Today's tasks <span class="sp"></span><span class="muted sm" id="taskct"></span></h3><div class="list" id="tasks"></div></div>
+        </div>
+        <div class="grid c2e" style="margin-top:16px">
+          <div class="card"><h3>⚠️ Upcoming renewals (60 days)<span class="sp"></span><button class="btn sm" onclick="go('clients')">View all</button></h3><div class="tbl"><table id="renew"></table></div></div>
+          <div class="card"><h3>Recent activity</h3><div class="list" id="activity"></div></div>
+        </div>
+      </section>
+
+      <!-- WEBSITE -->
+      <section class="view" id="v-website">
+        <div class="browser" style="position:relative">
+          <div class="bbar"><i></i><i></i><i></i><div class="url">🔒 riverosinsurance.com</div></div>
+          <div class="hero">
+            <div>
+              <div class="badge" style="background:rgba(255,255,255,.12);color:#99f6e4;margin-bottom:14px">Se habla español · Licensed in Florida</div>
+              <h2>Protect what matters most, <span>without the headache.</span></h2>
+              <p>Health, Medicare, life, auto and home insurance. We compare 15+ carriers to find you the best price — at no cost to you.</p>
+              <div class="trust"><span>⭐ 4.9 on Google</span><span>✅ 1,200+ families covered</span><span>📞 (407) 555-0142</span></div>
+            </div>
+            <form class="qform" id="qform">
+              <h4>Get a free quote in 60 seconds</h4>
+              <div class="fld"><label>Full name</label><input name="name" required placeholder="e.g. Maria Gonzalez"></div>
+              <div class="f2">
+                <div class="fld"><label>Phone</label><input name="phone" required placeholder="(407) 555-0000"></div>
+                <div class="fld"><label>ZIP code</label><input name="zip" placeholder="32801"></div>
+              </div>
+              <div class="f2">
+                <div class="fld"><label>Insurance type</label><select name="line"><option>Health (ACA)</option><option>Medicare</option><option>Life</option><option>Auto</option><option>Home</option></select></div>
+                <div class="fld"><label>People to cover</label><select name="size"><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></div>
+              </div>
+              <button class="btn pri" style="width:100%;justify-content:center;padding:11px">Get my quote →</button>
+              <p class="muted" style="font-size:11px;margin-top:8px;text-align:center">By submitting, you agree to be contacted by call, text or WhatsApp.</p>
+            </form>
+          </div>
+          <div class="lines">
+            <div class="line"><div class="e">🩺</div><b>Health / Obamacare</b><small>Plans from $0 with subsidy</small></div>
+            <div class="line"><div class="e">👵</div><b>Medicare</b><small>Advantage & supplements</small></div>
+            <div class="line"><div class="e">❤️</div><b>Life</b><small>Term, IUL & final expense</small></div>
+            <div class="line"><div class="e">🚗</div><b>Auto</b><small>Full or basic coverage</small></div>
+            <div class="line"><div class="e">🏠</div><b>Home</b><small>Owners & renters</small></div>
+          </div>
+          <div class="why">
+            <div><b>👩‍💼 A real agent, always</b><span class="muted sm">Your assigned agent is with you from quote to claim.</span></div>
+            <div><b>📱 Your policy on your phone</b><span class="muted sm">Client portal with ID card, payments and documents.</span></div>
+            <div><b>🔔 Never lose coverage</b><span class="muted sm">We remind you before every renewal and payment date.</span></div>
+          </div>
+          <div class="wa">💬</div>
+        </div>
+      </section>
+
+      <!-- CRM -->
+      <section class="view" id="v-crm">
+        <div class="filters">
+          <button class="chip on" data-src="all">All</button>
+          <button class="chip" data-src="Website">Website</button>
+          <button class="chip" data-src="Facebook">Facebook</button>
+          <button class="chip" data-src="Referral">Referral</button>
+          <button class="chip" data-src="Phone call">Phone call</button>
+          <span class="sp" style="flex:1"></span>
+          <button class="btn pri" onclick="openNewLead()">+ New lead</button>
+        </div>
+        <div class="kan" id="kan"></div>
+      </section>
+
+      <!-- CLIENTS -->
+      <section class="view" id="v-clients">
+        <div class="filters" id="lfilters"></div>
+        <div class="card"><div class="tbl"><table id="ptable"></table></div></div>
+      </section>
+
+      <!-- AGENTS -->
+      <section class="view" id="v-agents">
+        <div class="grid k4" id="akpis"></div>
+        <div class="card" style="margin-top:16px">
+          <h3>Team & licenses <span class="sp"></span><button class="btn pri sm" onclick="openOnboard()">+ Add agent</button></h3>
+          <div class="tbl"><table id="atable"></table></div>
+        </div>
+        <div class="grid c2e" style="margin-top:16px">
+          <div class="card"><h3>Onboarding in progress</h3><div id="onb"></div></div>
+          <div class="card"><h3>Roles & permissions</h3><div class="tbl"><table id="perms"></table></div></div>
+        </div>
+      </section>
+
+      <!-- COMMISSIONS -->
+      <section class="view" id="v-commissions">
+        <div class="grid k4" id="ckpis"></div>
+        <div class="grid c2" style="margin-top:16px">
+          <div class="card"><h3>Commissions by agent — November</h3><div class="tbl"><table id="ctable"></table></div></div>
+          <div class="card"><h3>By carrier</h3><div id="carriers"></div></div>
+        </div>
+        <div class="card" style="margin-top:16px"><h3>Chargebacks & pending carrier payments</h3><div class="tbl"><table id="cb"></table></div></div>
+      </section>
+
+      <!-- AUTOMATIONS -->
+      <section class="view" id="v-automations">
+        <div class="grid c2">
+          <div class="card"><h3>Active automations <span class="sp"></span><span class="muted sm" id="autoct"></span></h3><div id="autos"></div></div>
+          <div class="card"><h3>What they did this month</h3><div class="list" id="autostats"></div>
+            <div class="pricebox" style="margin-top:14px"><b>≈ 46 hours saved</b><p class="muted sm" style="margin-top:4px">Messages, reminders and follow-ups someone used to do by hand.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI -->
+      <section class="view" id="v-ai">
+        <div class="grid c2">
+          <div class="card chat">
+            <div class="msgs" id="msgs"></div>
+            <div class="sugg" id="sugg"></div>
+            <form class="cin" id="cform"><input id="cinput" placeholder="Ask your agency anything…" autocomplete="off"><button class="btn pri sm">Send</button></form>
+          </div>
+          <div class="card hide-m"><h3>What can the assistant do?</h3>
+            <div class="list">
+              <div class="it"><span>📊</span><div><b>Answers business questions</b><div class="muted sm">Renewals, uncontacted leads, sales by agent — from your real data.</div></div></div>
+              <div class="it"><span>✍️</span><div><b>Writes messages</b><div class="muted sm">WhatsApp/SMS follow-ups in English or Spanish, in the agency's voice.</div></div></div>
+              <div class="it"><span>📄</span><div><b>Reads documents</b><div class="muted sm">Pulls data from licenses, IDs and declarations pages to fill applications.</div></div></div>
+              <div class="it"><span>🎓</span><div><b>Trains new agents</b><div class="muted sm">Answers product and sales-script questions, 24/7.</div></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTAL -->
+      <section class="view" id="v-portal">
+        <div class="grid c2e" style="align-items:center">
+          <div class="phone"><div class="screen">
+            <div class="ph-top"><small>Hi,</small><div style="font-size:20px;font-weight:700">Maria Gonzalez 👋</div><small>Your agent: Carla Mendez</small></div>
+            <div class="ph-body">
+              <div class="idc"><small>Insurance ID card · Florida Blue</small><div style="font-weight:700;font-size:16px;margin:4px 0">BlueSelect Silver 1410</div><div class="row" style="justify-content:space-between"><div><small>Member</small><div style="font-weight:600">XJK 48120937</div></div><div><small>Group</small><div style="font-weight:600">FB-0026</div></div></div></div>
+              <div class="qa"><div><span>💳</span>Pay</div><div><span>📄</span>Docs</div><div><span>💬</span>Chat</div><div><span>🩺</span>Doctors</div></div>
+              <div style="font-weight:700;margin:4px 2px 8px">My policies</div>
+              <div class="pol"><div class="row"><b style="flex:1">🩺 Family health</b><span class="badge b-green">Active</span></div><div class="muted sm">$38/mo premium · with subsidy · Renews 01/01/2027</div></div>
+              <div class="pol"><div class="row"><b style="flex:1">🚗 Auto — Toyota RAV4</b><span class="badge b-amber">Due 11/25</span></div><div class="muted sm">Progressive · $142/mo</div></div>
+              <div class="pol"><div class="row"><b style="flex:1">❤️ 20-year term life</b><span class="badge b-green">Active</span></div><div class="muted sm">$250,000 · Beneficiary: Luis Gonzalez</div></div>
+              <div class="pol" style="background:#fff8eb;border-color:#fde3b5"><b>📌 Action needed</b><div class="muted sm">Upload proof of income to verify your 2027 subsidy.</div><button class="btn sm pri" style="margin-top:8px">Upload document</button></div>
+            </div>
+          </div></div>
+          <div>
+            <h2 style="font-size:24px;line-height:1.2;margin-bottom:10px">Client portal</h2>
+            <p class="muted" style="margin-bottom:16px">Every client logs in from their phone and sees their policies, ID card, payments and agent — without calling the office.</p>
+            <div class="list">
+              <div class="it"><span>✅</span><div><b>Fewer calls to the office</b><div class="muted sm">“When is my payment due?” “Can you send my card?” — they handle it themselves.</div></div></div>
+              <div class="it"><span>✅</span><div><b>No more chasing documents</b><div class="muted sm">Proof of income, licenses and IDs go straight into the client's file.</div></div></div>
+              <div class="it"><span>✅</span><div><b>Better retention</b><div class="muted sm">Payment and renewal reminders cut cancellations and chargebacks.</div></div></div>
+              <div class="it"><span>✅</span><div><b>Cross-selling</b><div class="muted sm">The portal suggests life or auto to clients who only have health.</div></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+<nav class="mobnav" id="mobnav"></nav>
+
+<div class="ov" id="ov" onclick="closeAll()"></div>
+<div class="drawer" id="drawer"></div>
+<div class="modal" id="modal"></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const IC={
+ home:'<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
+ website:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>',
+ crm:'<rect x="3" y="4" width="5" height="16" rx="1.5"/><rect x="10" y="4" width="5" height="11" rx="1.5"/><rect x="17" y="4" width="4" height="7" rx="1.5"/>',
+ clients:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/>',
+ agents:'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16 14.6c2.8.1 4.8 1.9 5.5 5.4"/>',
+ commissions:'<rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/>',
+ automations:'<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
+ ai:'<path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/>',
+ portal:'<rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18.5h2"/>'
+};
+const VIEWS=[
+ {id:'home',t:'Home',m:'Home',s:'Agency overview · November 2026',sec:'Agency'},
+ {id:'website',t:'Website',m:'Website',s:'Public site that generates leads'},
+ {id:'crm',t:'Sales CRM',m:'CRM',s:'Lead pipeline by stage',pill:true},
+ {id:'clients',t:'Clients & Policies',m:'Clients',s:'Book of business'},
+ {id:'agents',t:'Agents',m:'Agents',s:'Licenses, appointments, onboarding & permissions',sec:'Team'},
+ {id:'commissions',t:'Commissions',m:'Pay',s:'What was earned, what is still owed'},
+ {id:'automations',t:'Automations',m:'Auto',s:'What the platform does on its own',sec:'Intelligence'},
+ {id:'ai',t:'AI Assistant',m:'AI',s:'Ask your agency anything'},
+ {id:'portal',t:'Client Portal',m:'Portal',s:'What your clients see on their phone'}
+];
+const svg=k=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${IC[k]}</svg>`;
+const $=s=>document.querySelector(s);
+const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+const COLORS=[['#dbeafe','#1d4ed8'],['#dcfce7','#15803d'],['#fce7f3','#be185d'],['#fef3c7','#b45309'],['#ede9fe','#6d28d9'],['#cffafe','#0e7490']];
+const ini=(n,i)=>{const c=COLORS[(i??n.length)%COLORS.length];return `<div class="ini" style="background:${c[0]};color:${c[1]}">${n.split(' ').map(x=>x[0]).slice(0,2).join('')}</div>`};
+const TODAY=new Date(2026,10,17);
+const fmtD=d=>d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'2-digit'});
+const addD=n=>{const d=new Date(TODAY);d.setDate(d.getDate()+n);return d};
+const first=n=>n.split(' ')[0];
+
+/* ---------- DATA ---------- */
+const AGENTS=[
+ {n:'Carla Mendez',role:'Senior agent',npn:'19283746',lic:'2-15, 2-40',exp:addD(410),ce:'24/24',appts:['Florida Blue','Ambetter','Oscar','Aetna','UHC'],status:'Active'},
+ {n:'Jose Ramirez',role:'Agent',npn:'20384756',lic:'2-15',exp:addD(26),ce:'14/24',appts:['Florida Blue','Ambetter','Oscar'],status:'Active'},
+ {n:'Daniela Torres',role:'Agent',npn:'21475869',lic:'2-15, 2-20',exp:addD(230),ce:'24/24',appts:['Ambetter','Oscar','Progressive'],status:'Active'},
+ {n:'Miguel Rosa',role:'Medicare agent',npn:'18273645',lic:'2-15',exp:addD(95),ce:'20/24',appts:['Humana','Aetna','UHC','Devoted'],status:'Active'},
+ {n:'Valeria Castro',role:'Agent (new)',npn:'Pending',lic:'2-40',exp:addD(720),ce:'—',appts:[],status:'Onboarding'},
+ {n:'Andres Pena',role:'Agent (new)',npn:'22586970',lic:'2-15',exp:addD(700),ce:'—',appts:['Ambetter'],status:'Onboarding'}
+];
+let LEADS=[
+ {id:1,n:'Yesenia Morales',ph:'(407) 555-0198',line:'Health (ACA)',src:'Facebook',st:0,ag:'Jose Ramirez',v:4800,age:'12 min ago',hh:4},
+ {id:2,n:'Roberto Diaz',ph:'(321) 555-0110',line:'Medicare',src:'Phone call',st:0,ag:'Miguel Rosa',v:2400,age:'1 hr ago',hh:1},
+ {id:3,n:'Gutierrez Family',ph:'(407) 555-0177',line:'Health (ACA)',src:'Referral',st:0,ag:'Carla Mendez',v:6100,age:'3 hr ago',hh:5},
+ {id:4,n:'Ana Lucia Perez',ph:'(689) 555-0133',line:'Life',src:'Website',st:1,ag:'Daniela Torres',v:1900,age:'yesterday',hh:1},
+ {id:5,n:'Kevin Herrera',ph:'(407) 555-0156',line:'Auto',src:'Facebook',st:1,ag:'Daniela Torres',v:1700,age:'yesterday',hh:2},
+ {id:6,n:'Gloria Sanchez',ph:'(321) 555-0144',line:'Medicare',src:'Referral',st:1,ag:'Miguel Rosa',v:2400,age:'2 days ago',hh:1},
+ {id:7,n:'Luis & Marta Ortiz',ph:'(407) 555-0121',line:'Health (ACA)',src:'Website',st:2,ag:'Carla Mendez',v:5200,age:'2 days ago',hh:2},
+ {id:8,n:'Pedro Alvarado',ph:'(407) 555-0189',line:'Home',src:'Phone call',st:2,ag:'Daniela Torres',v:2100,age:'3 days ago',hh:3},
+ {id:9,n:'Sandra Villalobos',ph:'(689) 555-0102',line:'Life',src:'Referral',st:2,ag:'Carla Mendez',v:3600,age:'4 days ago',hh:1},
+ {id:10,n:'Reyes Family',ph:'(407) 555-0165',line:'Health (ACA)',src:'Facebook',st:3,ag:'Jose Ramirez',v:7400,age:'5 days ago',hh:6},
+ {id:11,n:'Hector Fuentes',ph:'(321) 555-0171',line:'Medicare',src:'Phone call',st:3,ag:'Miguel Rosa',v:2400,age:'6 days ago',hh:1},
+ {id:12,n:'Marisol Cabrera',ph:'(407) 555-0138',line:'Health (ACA)',src:'Website',st:4,ag:'Carla Mendez',v:3900,age:'1 wk ago',hh:3},
+ {id:13,n:'Jorge Medina',ph:'(689) 555-0119',line:'Auto',src:'Referral',st:4,ag:'Daniela Torres',v:1600,age:'1 wk ago',hh:2}
+];
+const STAGES=['New','Contacted','Quoted','Application sent','Won ✓'];
+const STC=['b-blue','b-amber','b-teal','b-gray','b-green'];
+const POL=[
+ {c:'Maria Gonzalez',line:'Health (ACA)',car:'Florida Blue',plan:'BlueSelect Silver 1410',prem:612,ag:'Carla Mendez',ren:addD(45),st:'Active'},
+ {c:'Reyes Family',line:'Health (ACA)',car:'Ambetter',plan:'Balanced Care 12',prem:890,ag:'Jose Ramirez',ren:addD(45),st:'Active'},
+ {c:'Rosa Delgado',line:'Medicare',car:'Humana',plan:'Gold Plus HMO',prem:0,ag:'Miguel Rosa',ren:addD(44),st:'Active'},
+ {c:'Carlos Mendez',line:'Auto',car:'Progressive',plan:'Full coverage',prem:168,ag:'Daniela Torres',ren:addD(12),st:'Payment due'},
+ {c:'Lourdes Navarro',line:'Life',car:'Mutual of Omaha',plan:'Term Life 20 — $300k',prem:46,ag:'Carla Mendez',ren:addD(210),st:'Active'},
+ {c:'Ernesto Vargas',line:'Home',car:'Universal P&C',plan:'HO-3 Homeowners',prem:214,ag:'Daniela Torres',ren:addD(28),st:'Active'},
+ {c:'Ortega Family',line:'Health (ACA)',car:'Oscar',plan:'Silver Classic',prem:744,ag:'Jose Ramirez',ren:addD(45),st:'Missing docs'},
+ {c:'Teresa Ruiz',line:'Medicare',car:'Aetna',plan:'Medicare Eagle PPO',prem:0,ag:'Miguel Rosa',ren:addD(44),st:'Active'},
+ {c:'Raul Dominguez',line:'Life',car:'Transamerica',plan:'Final Expense $15k',prem:58,ag:'Carla Mendez',ren:addD(300),st:'Active'},
+ {c:'Patricia Leon',line:'Health (ACA)',car:'Florida Blue',plan:'BlueOptions Gold',prem:830,ag:'Carla Mendez',ren:addD(45),st:'Active'},
+ {c:'Julio Cesar Paz',line:'Auto',car:'GEICO',plan:'Liability + PIP',prem:121,ag:'Daniela Torres',ren:addD(70),st:'Active'},
+ {c:'Isabel Moreno',line:'Health (ACA)',car:'Ambetter',plan:'Essential Care 3',prem:520,ag:'Jose Ramirez',ren:addD(45),st:'Cancelled'}
+];
+let TASKS=[
+ {t:'Call Yesenia Morales (new Facebook lead)',who:'Jose',done:false},
+ {t:'Request proof of income — Ortega Family',who:'Jose',done:false},
+ {t:'Payment reminder for auto — Carlos Mendez',who:'Daniela',done:true},
+ {t:'Renew Jose\'s 2-15 license (expires in 26 days)',who:'Jenny',done:false},
+ {t:'Review Valeria Castro\'s onboarding',who:'Jenny',done:false}
+];
+const AUTOS=[
+ {e:'⚡',bg:'#e0f2fe',t:'Instant lead response',d:'When a lead comes in, they get a text/WhatsApp in under 1 minute and are assigned to the next available agent.',f:['New lead','Text + WhatsApp','Assign agent','Task: call within 15 min'],on:true,n:212},
+ {e:'🔁',bg:'#fef3c7',t:'Follow-up if no answer',d:'Day 1, 3 and 7: automatic messages until the lead replies or opts out.',f:['No reply','Day 1','Day 3','Day 7'],on:true,n:388},
+ {e:'📅',bg:'#dcfce7',t:'Renewal reminders',d:'60, 30 and 7 days before renewal: notice to the client and a task for the agent to review the plan.',f:['Renews in 60 days','Email + text','Agent task'],on:true,n:96},
+ {e:'💳',bg:'#fde8ee',t:'Payment alerts & chargeback prevention',d:'If a payment fails or is about to lapse, the client and agent are alerted before the policy cancels.',f:['Payment due','WhatsApp client','Alert agent'],on:true,n:41},
+ {e:'🎂',bg:'#ede9fe',t:'Birthdays & referrals',d:'Personalized birthday message plus a referral ask with a direct link to the quote form.',f:['Birthday','Message','Referral link'],on:true,n:57},
+ {e:'🪪',bg:'#cffafe',t:'License & CE alerts',d:'Alerts the owner and agent 90/60/30 days before a license expires or CE hours are due.',f:['License expiring','Email','Pause lead assignment if expired'],on:true,n:6},
+ {e:'📣',bg:'#fef3c7',t:'Open Enrollment campaign (Nov 1 – Jan 15)',d:'Re-engages health clients and old leads for enrollment season.',f:['Date: OEP','Segment: Health','4-message sequence'],on:false,n:0}
+];
+
+/* ---------- NAV / ROUTER ---------- */
+function buildNav(){
+  let h='';VIEWS.forEach(v=>{if(v.sec)h+=`<div class="sec">${v.sec}</div>`;h+=`<a href="#${v.id}" data-v="${v.id}">${svg(v.id)}<span>${v.t}</span>${v.pill?`<span class="pill" id="leadpill"></span>`:''}</a>`});
+  $('#nav').innerHTML=h;
+  $('#mobnav').innerHTML=VIEWS.map(v=>`<a href="#${v.id}" data-v="${v.id}">${svg(v.id)}${v.m}</a>`).join('');
+}
+function go(id){location.hash=id}
+function route(){
+  closeAll();const id=(location.hash||'#home').slice(1);const v=VIEWS.find(x=>x.id===id)||VIEWS[0];
+  document.querySelectorAll('.view').forEach(e=>e.classList.toggle('on',e.id==='v-'+v.id));
+  document.querySelectorAll('[data-v]').forEach(e=>e.classList.toggle('on',e.dataset.v===v.id));
+  $('#ttl').textContent=v.t;$('#sttl').textContent=v.s;window.scrollTo(0,0);
+  const m=document.querySelector(`#mobnav [data-v="${v.id}"]`);if(m)m.scrollIntoView({inline:'center',block:'nearest'});
+}
+window.addEventListener('hashchange',route);
+
+/* ---------- HOME ---------- */
+function renderHome(){
+  const active=POL.filter(p=>p.st!=='Cancelled');
+  const prem=active.reduce((a,p)=>a+p.prem,0)*58;
+  $('#kpis').innerHTML=[
+   ['Leads this month',142+LEADS.length-13,'▲ 23% vs October','up'],
+   ['Active policies','1,248','▲ 61 new this month','up'],
+   ['Monthly premium (book)',money(prem),'▲ 8.4%','up'],
+   ['Est. November commissions',money(38420),'▼ 3 chargebacks','dn']
+  ].map(k=>`<div class="card kpi"><div class="lbl">${k[0]}</div><div class="val">${k[1]}</div><div class="d ${k[3]}">${k[2]}</div></div>`).join('');
+  const data=[38,42,35,47,51,44,49,53,58,66,61];const mo=['J','F','M','A','M','J','J','A','S','O','N'];const mx=Math.max(...data);
+  $('#bars').innerHTML=data.map((v,i)=>`<div class="b ${i===data.length-1?'cur':''}"><em>${v}</em><i style="height:${v/mx*100}%"></i><span>${mo[i]}</span></div>`).join('');
+  renderTasks();
+  const ren=POL.filter(p=>(p.ren-TODAY)/864e5<=60&&p.st!=='Cancelled').sort((a,b)=>a.ren-b.ren).slice(0,5);
+  $('#renew').innerHTML='<thead><tr><th>Client</th><th>Line</th><th>Renews</th><th class="hide-m">Agent</th></tr></thead><tbody>'+ren.map(p=>{const d=Math.round((p.ren-TODAY)/864e5);return `<tr><td><b>${p.c}</b><div class="muted sm">${p.car}</div></td><td>${p.line}</td><td><span class="badge ${d<=30?'b-red':'b-amber'}">${d} days</span></td><td class="hide-m muted">${p.ag}</td></tr>`}).join('')+'</tbody>';
+  renderActivity();
+}
+let ACT=[
+ ['var(--green)','<b>Marisol Cabrera</b> signed her health application (Florida Blue)','25 min ago'],
+ ['var(--blue)','New Facebook lead: <b>Yesenia Morales</b> — assigned to Jose','12 min ago'],
+ ['var(--amber)','Failed payment: <b>Carlos Mendez</b> (Progressive) — reminder sent','1 hr ago'],
+ ['var(--accent)','<b>Valeria Castro</b> completed training module 3','2 hr ago'],
+ ['var(--red)','<b>Jose Ramirez</b>\'s license expires in 26 days','today 8:00 am']
+];
+function renderActivity(){$('#activity').innerHTML=ACT.slice(0,6).map(a=>`<div class="it"><span class="dot" style="background:${a[0]}"></span><div style="flex:1">${a[1]}<div class="muted sm">${a[2]}</div></div></div>`).join('')}
+function renderTasks(){
+  $('#tasks').innerHTML=TASKS.map((t,i)=>`<div class="it ${t.done?'done':''}" style="cursor:pointer" onclick="TASKS[${i}].done=!TASKS[${i}].done;renderTasks()"><span class="chk ${t.done?'done':''}"></span><div style="flex:1"><div class="t">${t.t}</div><div class="muted sm">Assigned to ${t.who}</div></div></div>`).join('');
+  $('#taskct').textContent=TASKS.filter(t=>t.done).length+'/'+TASKS.length+' done';
+}
+
+/* ---------- CRM ---------- */
+let srcF='all';
+function renderKan(flash){
+  const L=LEADS.filter(l=>srcF==='all'||l.src===srcF);
+  $('#kan').innerHTML=STAGES.map((s,i)=>{const items=L.filter(l=>l.st===i);const sum=items.reduce((a,l)=>a+l.v,0);
+   return `<div class="col"><h4>${s}<span class="n">${items.length}</span><span class="sum">${money(sum)}/yr</span></h4>${items.map(l=>`
+    <div class="lead ${flash===l.id?'new':''}" onclick="openLead(${l.id})">
+      <div class="nm">${l.n}</div>
+      <div class="meta"><span class="badge b-gray">${l.line}</span><span class="badge ${l.src==='Website'?'b-teal':'b-blue'}">${l.src}</span></div>
+      <div class="ft"><span>${first(l.ag)} · ${l.age}</span>${i<4?`<button class="btn sm" onclick="event.stopPropagation();advance(${l.id})">Advance →</button>`:'<span class="badge b-green">Client</span>'}</div>
+    </div>`).join('')}</div>`}).join('');
+  $('#leadpill').textContent=LEADS.filter(l=>l.st===0).length;
+}
+document.addEventListener('click',e=>{const c=e.target.closest('[data-src]');if(!c)return;srcF=c.dataset.src;document.querySelectorAll('[data-src]').forEach(x=>x.classList.toggle('on',x===c));renderKan()});
+function advance(id){const l=LEADS.find(x=>x.id===id);if(l.st<4){l.st++;toast(`✅ ${l.n} → ${STAGES[l.st]}`+(l.st===4?' · policy created & portal access sent':''));renderKan();if($('#drawer').classList.contains('on'))openLead(id)}}
+function openLead(id){
+  const l=LEADS.find(x=>x.id===id);
+  $('#drawer').innerHTML=`<div class="dh">${ini(l.n,id)}<div><b style="font-size:16px">${l.n}</b><div><span class="badge ${STC[l.st]}">${STAGES[l.st]}</span></div></div><button class="x" onclick="closeAll()">×</button></div>
+  <div class="db">
+    <dl class="kv"><dt>Phone</dt><dd>${l.ph}</dd><dt>Insurance</dt><dd>${l.line}</dd><dt>People</dt><dd>${l.hh}</dd><dt>Source</dt><dd>${l.src}</dd><dt>Agent</dt><dd>${l.ag}</dd><dt>Est. annual value</dt><dd><b>${money(l.v)}</b></dd><dt>Created</dt><dd>${l.age}</dd></dl>
+    <div class="row" style="gap:8px;margin-bottom:18px;flex-wrap:wrap"><button class="btn sm" onclick="toast('📞 Calling from the platform (recording on)…')">📞 Call</button><button class="btn sm" onclick="toast('💬 WhatsApp sent to ${first(l.n)}')">💬 WhatsApp</button><button class="btn sm" onclick="toast('📄 Quote PDF generated and sent')">📄 Send quote</button>${l.st<4?`<button class="btn pri sm" onclick="advance(${l.id})">Advance stage →</button>`:''}</div>
+    <b style="font-size:13px">AI-suggested message</b>
+    <div class="tpl">Hi ${first(l.n)} 👋 this is ${first(l.ag)} from Riveros Insurance. I saw you asked about <b>${l.line}</b> coverage. ${l.line.includes('Health')?'With the 2027 subsidies, a lot of families are paying $0–$50/month.':'I have a couple of great-priced options for you.'} Can I call you today, or is tomorrow better?</div>
+    <b style="font-size:13px;display:block;margin:16px 0 10px">History</b>
+    <div class="tl">
+      ${l.st>=3?'<div class="e"><b>Application sent to carrier</b><p>E-signature completed</p></div>':''}
+      ${l.st>=2?'<div class="e"><b>Quote sent</b><p>3 options compared · PDF opened twice</p></div>':''}
+      ${l.st>=1?'<div class="e"><b>Call — 6 min</b><p>Interested, wants options that include their doctor</p></div>':''}
+      <div class="e"><b>Automatic text sent</b><p>Instant response · 42 sec after sign-up</p></div>
+      <div class="e"><b>Lead created</b><p>Source: ${l.src} · assigned to ${l.ag}</p></div>
+    </div>
+  </div>`;
+  openD();
+}
+function openNewLead(){
+  $('#modal').innerHTML=`<h3 style="margin-bottom:14px">New lead</h3><form id="nlf">
+   <div class="fld"><label>Name</label><input name="name" required></div>
+   <div class="f2"><div class="fld"><label>Phone</label><input name="phone"></div><div class="fld"><label>Type</label><select name="line"><option>Health (ACA)</option><option>Medicare</option><option>Life</option><option>Auto</option><option>Home</option></select></div></div>
+   <div class="fld"><label>Source</label><select name="src"><option>Phone call</option><option>Referral</option><option>Facebook</option></select></div>
+   <div class="row" style="justify-content:flex-end"><button type="button" class="btn" onclick="closeAll()">Cancel</button><button class="btn pri">Create lead</button></div></form>`;
+  openM();
+  $('#nlf').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);addLead(f.get('name'),f.get('phone')||'—',f.get('line'),f.get('src'),1);closeAll()};
+}
+let nid=100;
+function addLead(n,ph,line,src,hh){
+  const pick=line==='Medicare'?'Miguel Rosa':line==='Auto'||line==='Home'?'Daniela Torres':['Carla Mendez','Jose Ramirez'][nid%2];
+  const h=parseInt(hh)||1;
+  const l={id:++nid,n,ph,line,src,st:0,ag:pick,v:line.includes('Health')?1300*h:line==='Medicare'?2400:1800,age:'just now',hh:hh};
+  LEADS.unshift(l);ACT.unshift(['var(--blue)',`New lead (${src}): <b>${n}</b> — assigned to ${first(pick)}`,'just now']);
+  TASKS.unshift({t:`Call ${n} (new lead)`,who:first(pick),done:false});
+  renderKan(l.id);renderHome();return l;
+}
+
+/* ---------- WEBSITE FORM ---------- */
+$('#qform').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);
+  const l=addLead(f.get('name'),f.get('phone'),f.get('line'),'Website',f.get('size'));
+  e.target.reset();
+  toast(`🎉 Lead received → assigned to ${first(l.ag)} · welcome text sent. <button class="btn sm" style="margin-left:6px" onclick="go('crm')">View in CRM</button>`,5200);
+};
+
+/* ---------- CLIENTS ---------- */
+let lineF='All';
+function renderPol(){
+  const lines=['All','Health (ACA)','Medicare','Life','Auto','Home'];
+  $('#lfilters').innerHTML=lines.map(x=>`<button class="chip ${x===lineF?'on':''}" onclick="lineF='${x}';renderPol()">${x}</button>`).join('')+`<span style="flex:1"></span><span class="muted sm">Showing ${POL.length} of 1,248 policies</span>`;
+  const q=($('#gsearch').value||'').toLowerCase();
+  const rows=POL.filter(p=>(lineF==='All'||p.line===lineF)&&(!q||(p.c+p.car+p.ag+p.plan).toLowerCase().includes(q)));
+  const sb={'Active':'b-green','Payment due':'b-amber','Missing docs':'b-amber','Cancelled':'b-red'};
+  $('#ptable').innerHTML='<thead><tr><th>Client</th><th>Line</th><th class="hide-m">Carrier / Plan</th><th>Premium</th><th class="hide-m">Agent</th><th>Renews</th><th>Status</th></tr></thead><tbody>'+
+   rows.map((p,i)=>`<tr><td><div class="who">${ini(p.c,i)}<b>${p.c}</b></div></td><td>${p.line}</td><td class="hide-m"><div>${p.car}</div><div class="muted sm">${p.plan}</div></td><td>${p.prem?money(p.prem)+'/mo':'<span class="muted">$0</span>'}</td><td class="hide-m muted">${p.ag}</td><td>${fmtD(p.ren)}</td><td><span class="badge ${sb[p.st]}">${p.st}</span></td></tr>`).join('')+'</tbody>';
+}
+$('#gsearch').addEventListener('input',()=>{if(!location.hash.includes('clients'))go('clients');renderPol()});
+
+/* ---------- AGENTS ---------- */
+function renderAgents(){
+  const exp=AGENTS.filter(a=>(a.exp-TODAY)/864e5<90).length;
+  $('#akpis').innerHTML=[['Active agents',AGENTS.filter(a=>a.status!=='Onboarding').length,'',''],['Onboarding',AGENTS.filter(a=>a.status==='Onboarding').length,'New hires',''],['Licenses expiring (90 d)',exp,'Action needed','dn'],['Active appointments',AGENTS.reduce((a,x)=>a+x.appts.length,0),'across 9 carriers','up']]
+   .map(k=>`<div class="card kpi"><div class="lbl">${k[0]}</div><div class="val">${k[1]}</div><div class="d ${k[3]}">${k[2]}</div></div>`).join('');
+  $('#atable').innerHTML='<thead><tr><th>Agent</th><th class="hide-m">NPN</th><th>FL licenses</th><th>Expires</th><th class="hide-m">CE</th><th class="hide-m">Appointments</th><th>Status</th></tr></thead><tbody>'+
+   AGENTS.map((a,i)=>{const d=Math.round((a.exp-TODAY)/864e5);return `<tr><td><div class="who">${ini(a.n,i)}<div><b>${a.n}</b><div class="muted sm">${a.role}</div></div></div></td><td class="hide-m">${a.npn}</td><td>${a.lic}</td><td><span class="badge ${d<30?'b-red':d<120?'b-amber':'b-green'}">${d<120?d+' days':fmtD(a.exp)}</span></td><td class="hide-m">${a.ce}</td><td class="hide-m sm">${a.appts.length?a.appts.join(', '):'<span class="muted">Pending</span>'}</td><td><span class="badge ${a.status==='Onboarding'?'b-blue':'b-green'}">${a.status}</span></td></tr>`}).join('')+'</tbody>';
+  const steps=['License verified (FL DFS)','Contract & W-9 signed','Email & accounts created','CRM access with permissions','Appointments submitted','Training: products','Training: sales script','First supervised sale'];
+  const pv=[5,3];
+  $('#onb').innerHTML=['Valeria Castro','Andres Pena'].map((n,j)=>`<div style="margin-bottom:16px"><div class="row" style="margin-bottom:6px">${ini(n,4+j)}<b style="flex:1">${n}</b><span class="muted sm">${pv[j]}/8 steps</span></div><div class="prog"><i style="width:${pv[j]/8*100}%"></i></div><div class="flow" style="margin-top:9px">${steps.map((s,i)=>`<span style="${i<pv[j]?'background:var(--greenbg);border-color:#bfe5cb;color:var(--green)':''}">${i<pv[j]?'✓ ':''}${s}</span>`).join('')}</div></div>`).join('');
+  const P=[['See own leads','✓','✓','✓'],['See all leads','—','✓','✓'],['See own commissions','✓','✓','✓'],['See everyone\'s commissions','—','—','✓'],['Export data','—','—','✓'],['Add / deactivate agents','—','✓','✓']];
+  $('#perms').innerHTML='<thead><tr><th>Permission</th><th>Agent</th><th>Manager</th><th>Owner</th></tr></thead><tbody>'+P.map(r=>`<tr><td>${r[0]}</td>${r.slice(1).map(x=>`<td style="color:${x==='✓'?'var(--green)':'#cbd5e1'};font-weight:700">${x}</td>`).join('')}</tr>`).join('')+'</tbody>';
+}
+function openOnboard(){
+  $('#modal').innerHTML=`<h3 style="margin-bottom:4px">Add agent</h3><p class="muted sm" style="margin-bottom:14px">On save, the platform verifies the license, creates their accounts and assigns training.</p><form id="obf">
+   <div class="fld"><label>Full name</label><input name="n" required></div>
+   <div class="f2"><div class="fld"><label>NPN</label><input name="npn" placeholder="e.g. 23456789"></div><div class="fld"><label>License</label><select name="lic"><option>2-15 (Health & Life)</option><option>2-40 (Health)</option><option>2-20 (P&C)</option></select></div></div>
+   <div class="fld"><label>Role</label><select name="role"><option>Agent</option><option>Manager</option></select></div>
+   <div class="row" style="justify-content:flex-end"><button type="button" class="btn" onclick="closeAll()">Cancel</button><button class="btn pri">Start onboarding</button></div></form>`;
+  openM();
+  $('#obf').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);AGENTS.push({n:f.get('n'),role:f.get('role')+' (new)',npn:f.get('npn')||'Pending',lic:f.get('lic').split(' ')[0],exp:addD(730),ce:'—',appts:[],status:'Onboarding'});renderAgents();closeAll();toast('🪪 Onboarding started · welcome email & checklist sent')};
+}
+
+/* ---------- COMMISSIONS ---------- */
+function renderCom(){
+  $('#ckpis').innerHTML=[['Est. November commissions',money(38420),'▲ 11% vs Oct.','up'],['Paid by carriers',money(29110),'76%',''],['Still owed',money(9310),'4 carriers',''],['Chargebacks',money(1240),'3 policies','dn']]
+   .map(k=>`<div class="card kpi"><div class="lbl">${k[0]}</div><div class="val">${k[1]}</div><div class="d ${k[3]}">${k[2]}</div></div>`).join('');
+  const C=[['Carla Mendez',38,13900,'Paid'],['Jose Ramirez',27,8650,'Partial'],['Miguel Rosa',22,9240,'Paid'],['Daniela Torres',31,6630,'Partial'],['Valeria Castro',0,0,'—']];
+  $('#ctable').innerHTML='<thead><tr><th>Agent</th><th>Policies</th><th>Commission</th><th class="hide-m">Agent split</th><th>Status</th></tr></thead><tbody>'+C.map((c,i)=>`<tr><td><div class="who">${ini(c[0],i)}<b>${c[0]}</b></div></td><td>${c[1]}</td><td><b>${money(c[2])}</b></td><td class="hide-m muted">${money(c[2]*.6)} (60%)</td><td><span class="badge ${c[3]==='Paid'?'b-green':c[3]==='Partial'?'b-amber':'b-gray'}">${c[3]}</span></td></tr>`).join('')+'</tbody>';
+  const K=[['Florida Blue',12400],['Ambetter',8900],['Humana',6200],['Oscar',4300],['Aetna',3100],['Progressive',2100],['Others',1420]];const mx=K[0][1];
+  $('#carriers').innerHTML=K.map(k=>`<div style="margin-bottom:11px"><div class="row sm" style="margin-bottom:4px"><span style="flex:1;font-weight:600">${k[0]}</span><span>${money(k[1])}</span></div><div class="prog"><i style="width:${k[1]/mx*100}%"></i></div></div>`).join('');
+  $('#cb').innerHTML='<thead><tr><th>Client / Carrier</th><th>Type</th><th>Amount</th><th class="hide-m">Reason</th><th>Action</th></tr></thead><tbody>'+
+   [['Isabel Moreno · Ambetter','Chargeback',-480,'Cancelled before 90 days'],['Ortega Family · Oscar','On hold',-520,'Missing income documents'],['Carlos Mendez · Progressive','At risk',-240,'Failed payment 11/14'],['Florida Blue · October','Payment pending',3850,'Statement not received']]
+   .map(r=>`<tr><td><b>${r[0]}</b></td><td><span class="badge ${r[2]<0?'b-red':'b-amber'}">${r[1]}</span></td><td style="color:${r[2]<0?'var(--red)':'inherit'};font-weight:700">${r[2]<0?'-':''}${money(Math.abs(r[2]))}</td><td class="hide-m muted">${r[3]}</td><td><button class="btn sm" onclick="toast('📨 Follow-up created and assigned')">Resolve</button></td></tr>`).join('')+'</tbody>';
+}
+
+/* ---------- AUTOMATIONS ---------- */
+function renderAutos(){
+  $('#autos').innerHTML=AUTOS.map((a,i)=>`<div class="auto"><div class="ic" style="background:${a.bg}">${a.e}</div><div style="flex:1"><b>${a.t}</b><div class="muted sm">${a.d}</div><div class="flow">${a.f.map((x,j)=>(j?'<em>→</em>':'')+`<span>${x}</span>`).join('')}</div></div><button class="tg ${a.on?'on':''}" aria-label="Toggle" onclick="AUTOS[${i}].on=!AUTOS[${i}].on;renderAutos();toast(AUTOS[${i}].on?'⚡ Automation turned on':'Automation paused')"></button></div>`).join('');
+  $('#autoct').textContent=AUTOS.filter(a=>a.on).length+' of '+AUTOS.length+' on';
+  $('#autostats').innerHTML=AUTOS.filter(a=>a.n).map(a=>`<div class="it"><span>${a.e}</span><div style="flex:1">${a.t}</div><b>${a.n}</b></div>`).join('');
+}
+
+/* ---------- AI ---------- */
+const SUG=['Which clients renew in the next 60 days?','Which leads haven\'t been contacted?','Who sold the most this month?','Which licenses are expiring?','Write a message for the Open Enrollment campaign'];
+function addMsg(t,who){const d=document.createElement('div');d.className='m '+who;d.innerHTML=t;$('#msgs').appendChild(d);$('#msgs').scrollTop=1e6}
+function answer(q){
+  q=q.toLowerCase();
+  if(q.includes('renew')){const r=POL.filter(p=>(p.ren-TODAY)/864e5<=60&&p.st!=='Cancelled').sort((a,b)=>a.ren-b.ren);return `You have <b>${r.length} policies</b> renewing in the next 60 days. Most urgent:<table>${r.slice(0,5).map(p=>`<tr><td>${p.c}</td><td>${p.line}</td><td><b>${Math.round((p.ren-TODAY)/864e5)} d</b></td></tr>`).join('')}</table>\nWant me to create a task for each agent?`}
+  if(q.includes('lead')||q.includes('contact')){const r=LEADS.filter(l=>l.st===0);return `There are <b>${r.length} uncontacted leads</b>:\n${r.map(l=>`• ${l.n} — ${l.line} (${l.age}) → ${first(l.ag)}`).join('\n')}\n\nAverage response time today: 9 minutes. 👍`}
+  if(q.includes('sold')||q.includes('sell')||q.includes('best')||q.includes('most')){return `<b>Carla Mendez</b> leads November with 38 policies and $13,900 in commission. Next are Daniela (31) and Jose (27).\n\nHeads up: Jose has the best close rate on health (41%) but gets fewer leads. Want me to adjust lead assignment?`}
+  if(q.includes('licen')){return `⚠️ <b>Jose Ramirez</b> — 2-15 license expires in <b>26 days</b> and he still needs 10 CE hours.\n<b>Miguel Rosa</b> — expires in 95 days, needs 4 CE hours.\n\nI already sent them reminders. If Jose's license lapses, I'll automatically stop assigning him leads.`}
+  if(q.includes('open')||q.includes('message')||q.includes('campaign')||q.includes('write')){return `Here's a draft for WhatsApp:\n\n<i>“Hi {name}! 👋 It's enrollment season for your 2027 health insurance (through January 15). This year many Florida families qualify for plans starting at $0/month. Want me to check if you can pay less or get a better plan? Reply YES and I'll call you today. — {agent}, Riveros Insurance”</i>\n\nShould I schedule it for your 412 health clients and leads? I can send a Spanish version too.`}
+  return 'I can answer questions about renewals, leads, sales by agent, licenses and commissions, or write messages for your clients. In the real version I\'m connected to all of your agency\'s data. 🙂';
+}
+function ask(q){addMsg(q,'u');setTimeout(()=>addMsg(answer(q),'a'),450)}
+function renderAI(){
+  addMsg('Hi Jenny 👋 I\'m your agency assistant. I know your clients, leads, agents and commissions. What do you need?','a');
+  $('#sugg').innerHTML=SUG.map(s=>`<button>${s}</button>`).join('');
+  $('#sugg').onclick=e=>{if(e.target.tagName==='BUTTON')ask(e.target.textContent)};
+  $('#cform').onsubmit=e=>{e.preventDefault();const v=$('#cinput').value.trim();if(v){ask(v);$('#cinput').value=''}};
+}
+
+/* ---------- UI helpers ---------- */
+function openD(){$('#ov').classList.add('on');$('#drawer').classList.add('on')}
+function openM(){$('#ov').classList.add('on');$('#modal').classList.add('on')}
+function closeAll(){['#ov','#drawer','#modal'].forEach(s=>$(s).classList.remove('on'))}
+let tt;function toast(h,ms=3000){const t=$('#toast');t.innerHTML=h;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),ms)}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll()});
+
+buildNav();renderHome();renderKan();renderPol();renderAgents();renderCom();renderAutos();renderAI();route();
+</script>
+</body>
+</html>
