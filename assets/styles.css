@@ -462,3 +462,4 @@ a:hover { color: var(--plum); text-decoration-thickness: 2px; }
 .pcard__status { align-self: flex-start; margin-bottom: 8px !important; font: 600 11.5px/1 var(--mono) !important; text-transform: uppercase; letter-spacing: .05em; color: var(--plum) !important; background: rgba(90, 40, 110, .08); border-radius: 20px; padding: 5px 9px; }
 .pcard__links { margin-top: auto !important; padding-top: 12px; display: flex; gap: 14px; flex-wrap: wrap; }
 .pcard__links a { font-size: 14px; color: var(--plum); }
+.section__note + .project { margin-top: 26px; }
