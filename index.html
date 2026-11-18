@@ -26,7 +26,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preload" href="/assets/fonts/source-serif-4-600.woff" as="font" type="font/woff" crossorigin>
-  <link rel="stylesheet" href="/assets/styles.css?v=r7">
+  <link rel="stylesheet" href="/assets/styles.css?v=r8">
   <script src="/assets/main.js?v=21" defer></script>
 </head>
 <body>
@@ -37,9 +37,10 @@
     <a class="brand" href="#top" aria-label="Irene Martin, Founder of eBuilt.app — back to top"><span class="brand__name">Irene Martin</span><span class="brand__sep" aria-hidden="true">|</span><span class="brand__role"><span class="hide-sm">Founder, eBuilt.app</span><span class="show-sm">Founder, eBuilt</span></span></a>
     <nav aria-label="Primary">
       <ul class="nav">
-        <li><a href="#build">What I build</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#brand">Squimsy</a></li>
+        <li class="hide-sm"><a href="#build">What I build</a></li>
+        <li class="hide-sm"><a href="#work">Work</a></li>
+        <li><a href="#more">Projects</a></li>
+        <li class="hide-sm"><a href="#brand">In progress</a></li>
         <li><a href="https://ebuilt.app" rel="noopener" target="_blank">eBuilt.app ↗</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -233,6 +234,19 @@
       </div>
     </article>
 
+    <h3 class="subtitle" id="more">More things I’ve built</h3>
+    <p class="section__note">Client work, case studies and products. Public versions are sanitized: no client names, data or credentials.</p>
+    <ul class="pcards">
+      <li class="pcard"><p class="pcard__tag">Insurance · Case study</p><h4>Insurance Operations System</h4><p>The acquisition-to-enrollment system for a Florida health insurance business: website, lead intake and qualification, consent and documents, quoting, enrollment, SMS and email follow-up, and referral tracking, in English and Spanish.</p><p class="fit__tools">Lead intake · quoting workflow · SMS/email follow-up · referrals · bilingual</p><p class="pcard__links"><a href="https://github.com/irenemartin1/insurance-operations-system" rel="noopener" target="_blank">Case study<span class="sr-only"> (opens in new tab)</span> ↗</a></p></li>
+      <li class="pcard"><p class="pcard__tag">Logistics · Platform</p><h4>LogisticsOS</h4><p>The multi-role product behind M.D. Sky OS: a dispatcher board, driver portal with check-ins, photos and signatures, an airport-style customer shipment board, and admin reporting.</p><p class="fit__tools">React · Supabase · role-based access · maps · Cloudflare</p><p class="pcard__links"><a href="https://github.com/irenemartin1/logistics-operations-platform" rel="noopener" target="_blank">Code<span class="sr-only"> (opens in new tab)</span> ↗</a></p></li>
+      <li class="pcard"><p class="pcard__tag">Insurance · Demo</p><h4>Insurance Agency Platform</h4><p>A full agency system: lead-generating website, sales CRM pipeline, agent licensing and onboarding, commissions and chargebacks, automations, AI assistant and a client portal for paying, uploading documents and chatting.</p><p class="fit__tools">CRM · licensing & CE tracking · commissions · client portal · AI</p></li>
+      <li class="pcard"><p class="pcard__tag">Contractors · Sales</p><h4>Contractor Revenue Platform</h4><p>Pipeline and revenue diagnostics for contractors: lead-conversion analysis, missed-revenue calculators, workflow recommendations and reporting dashboards.</p><p class="fit__tools">React · Vite · Tailwind · Recharts</p><p class="pcard__links"><a href="https://github.com/irenemartin1/contractor-revenue-platform" rel="noopener" target="_blank">Code<span class="sr-only"> (opens in new tab)</span> ↗</a></p></li>
+      <li class="pcard"><p class="pcard__tag">Operations · Product</p><h4>Personal Operations Hub</h4><p>One workspace for money, clients and work: accounts and spending analytics, debt and savings plans, a freelance CRM with projects and payments, tasks, calendar, goals and routines.</p><p class="fit__tools">React · dashboards · CRM · finance analytics</p><p class="pcard__links"><a href="https://github.com/irenemartin1/personal-operations-hub" rel="noopener" target="_blank">Code<span class="sr-only"> (opens in new tab)</span> ↗</a></p></li>
+      <li class="pcard"><p class="pcard__tag">Services · Web app</p><h4>Guided Insight Platform</h4><p>A guided self-reflection service with a structured assessment, a session-request workflow, a digital-guide preview and confirmation states.</p><p class="fit__tools">React · React Router · Tailwind · Framer Motion</p><p class="pcard__links"><a href="https://github.com/irenemartin1/guided-insight-platform" rel="noopener" target="_blank">Code<span class="sr-only"> (opens in new tab)</span> ↗</a></p></li>
+      <li class="pcard"><p class="pcard__tag">Wellness · Websites</p><h4>Wellness Service Websites</h4><p>Sites for personal training, therapeutic massage and nutrition coaching: service discovery, booking calls to action, testimonials and a client-intake preview, rebuilt out of a site builder into clean code.</p><p class="fit__tools">HTML/CSS/JS · React · responsive design</p><p class="pcard__links"><a href="https://github.com/irenemartin1/training-massage-nutrition-site" rel="noopener" target="_blank">Site 1<span class="sr-only"> (opens in new tab)</span> ↗</a><a href="https://github.com/irenemartin1/wellness-service-website" rel="noopener" target="_blank">Site 2<span class="sr-only"> (opens in new tab)</span> ↗</a></p></li>
+      <li class="pcard"><p class="pcard__tag">Studio · Website</p><h4>Business Systems Studio</h4><p>A conversion-focused site for a technology studio: service discovery, workflow and automation visualizations, project showcases and customer-journey concepts.</p><p class="fit__tools">React · Tailwind · component architecture</p><p class="pcard__links"><a href="https://github.com/irenemartin1/business-systems-studio" rel="noopener" target="_blank">Code<span class="sr-only"> (opens in new tab)</span> ↗</a></p></li>
+    </ul>
+
     <h3 class="subtitle" id="brand">In progress</h3>
     <article class="project" aria-labelledby="squimsy-title">
       <div class="project__text">
@@ -258,6 +272,12 @@
         </ul>
       </div>
     </article>
+
+    <ul class="pcards pcards--tight">
+      <li class="pcard"><p class="pcard__status">In progress</p><p class="pcard__tag">Contractors · Client build</p><h4>Electrical Contractor Platform</h4><p>For a South Florida electrical contractor: logo and branding, public website, Google Business Profile, an admin dashboard for jobs and a worker app for the electricians in the field. Bilingual.</p><p class="fit__tools">Branding · website · admin dashboard · worker app · Google Business</p></li>
+      <li class="pcard"><p class="pcard__status">In progress</p><p class="pcard__tag">eBuilt · Platform</p><h4>eBuilt.app</h4><p>My company site and a growing library of interactive client demos, moving off a no-code builder onto my own stack.</p><p class="fit__tools">Supabase · Google auth · Resend · Cloudflare · GitHub</p><p class="pcard__links"><a href="https://ebuilt.app" rel="noopener" target="_blank">ebuilt.app<span class="sr-only"> (opens in new tab)</span> ↗</a></p></li>
+      <li class="pcard"><p class="pcard__status">In progress</p><p class="pcard__tag">AI · Internal tool</p><h4>AI Build System</h4><p>My own AI tool for building custom software: a step-by-step process that runs more on its own, plus a library of every product I’ve built to start new projects from.</p><p class="fit__tools">Claude · AI agents · templates · automation</p></li>
+    </ul>
   </div>
 </section>
 
